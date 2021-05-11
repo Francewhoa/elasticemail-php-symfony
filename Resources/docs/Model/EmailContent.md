@@ -1,0 +1,20 @@
+# EmailContent
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**body** | [**ElasticEmail\Model\BodyPart**](BodyPart.md) | List of e-mail body parts, with user-provided MIME types (text/html, text/plain etc) | [optional] 
+**merge** | **string** | A key-value collection of custom merge fields, shared between recipients. Should be used in e-mail body like so: {firstname}, {lastname} etc. | [optional] 
+**attachments** | [**ElasticEmail\Model\MessageAttachment**](MessageAttachment.md) | Attachments provided by sending binary data | [optional] 
+**headers** | **string** | A key-value collection of custom e-mail headers. | [optional] 
+**postback** | **string** | Postback header. | [optional] 
+**from** | **string** | Your e-mail with an optional name (e.g.: John Doe &lt;email@domain.com&gt;) | [optional] 
+**replyTo** | **string** | To what address should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;) | [optional] 
+**subject** | **string** | Default subject of email. | [optional] 
+**templateName** | **string** | Name of template. | [optional] 
+**attachFiles** | **string** | Names of previously uploaded files that should be sent as downloadable attachments | [optional] 
+**utm** | [**Utm**](Utm.md) | Utm marketing data to be attached to every link in this e-mail. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
