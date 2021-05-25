@@ -1,6 +1,6 @@
 <?php
 /**
- * VerificationStatus
+ * TemplateScope
  *
  * PHP version 7.1.3
  *
@@ -34,12 +34,14 @@ use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\SerializedName;
 
 /**
- * Class representing the VerificationStatus model.
+ * Class representing the TemplateScope model.
+ *
+ * Visibility of a template
  *
  * @package ElasticEmail\Model
  * @author  OpenAPI Generator team
  */
-class VerificationStatus 
+class TemplateScope 
 {
         /**
      * Constructor

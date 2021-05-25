@@ -255,7 +255,7 @@ class TemplatesApi implements TemplatesApiInterface
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scopeType** | [**ElasticEmail\Model\TemplateScopeType**](../Model/ElasticEmail\Model\TemplateScopeType.md)| Return templates with specified scope only |
+ **scopeType** | [**ElasticEmail\Model\TemplateScope**](../Model/ElasticEmail\Model\TemplateScope.md)| Return templates with specified scope only |
  **templateTypes** | [**ElasticEmail\Model\TemplateType**](../Model/ElasticEmail\Model\TemplateType.md)| Return templates with specified type only | [optional]
  **limit** | **int**| Maximum number of returned items. | [optional]
  **offset** | **int**| How many items should be returned ahead. | [optional]

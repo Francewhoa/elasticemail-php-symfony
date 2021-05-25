@@ -13,7 +13,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -78,10 +78,10 @@ class TemplatePayload
     /**
      * Visibility of a template
      *
-     * @var TemplateScopeType|null
+     * @var TemplateScope|null
      * @SerializedName("TemplateScope")
-     * @Assert\Type("TemplateScopeType")
-     * @Type("TemplateScopeType")
+     * @Assert\Type("TemplateScope")
+     * @Type("TemplateScope")
      */
     protected $templateScope;
 
@@ -172,7 +172,7 @@ class TemplatePayload
     /**
      * Gets templateScope.
      *
-     * @return TemplateScopeType|null
+     * @return TemplateScope|null
      */
     public function getTemplateScope()
     {
@@ -182,7 +182,7 @@ class TemplatePayload
     /**
      * Sets templateScope.
      *
-     * @param TemplateScopeType|null $templateScope  Visibility of a template
+     * @param TemplateScope|null $templateScope  Visibility of a template
      *
      * @return $this
      */

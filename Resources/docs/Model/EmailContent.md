@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **attachments** | [**ElasticEmail\Model\MessageAttachment**](MessageAttachment.md) | Attachments provided by sending binary data | [optional] 
 **headers** | **string** | A key-value collection of custom e-mail headers. | [optional] 
 **postback** | **string** | Postback header. | [optional] 
+**envelopeFrom** | **string** | E-mail with an optional name to be used as the envelope from address (e.g.: John Doe &lt;email@domain.com&gt;) | [optional] 
 **from** | **string** | Your e-mail with an optional name (e.g.: John Doe &lt;email@domain.com&gt;) | [optional] 
 **replyTo** | **string** | To what address should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;) | [optional] 
 **subject** | **string** | Default subject of email. | [optional] 
