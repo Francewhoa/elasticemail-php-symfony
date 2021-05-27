@@ -42,6 +42,8 @@ use JMS\Serializer\Annotation\SerializedName;
 class MessageAttachment 
 {
         /**
+     * File&#39;s content as byte array (or a Base64 string)
+     *
      * @var string|null
      * @SerializedName("BinaryContent")
      * @Assert\Type("string")
@@ -50,7 +52,7 @@ class MessageAttachment
     protected $binaryContent;
 
     /**
-     * Filename
+     * Display name of the file
      *
      * @var string|null
      * @SerializedName("Name")
@@ -60,6 +62,8 @@ class MessageAttachment
     protected $name;
 
     /**
+     * MIME content type
+     *
      * @var string|null
      * @SerializedName("ContentType")
      * @Assert\Type("string")
@@ -91,7 +95,7 @@ class MessageAttachment
     /**
      * Sets binaryContent.
      *
-     * @param string|null $binaryContent
+     * @param string|null $binaryContent  File's content as byte array (or a Base64 string)
      *
      * @return $this
      */
@@ -115,7 +119,7 @@ class MessageAttachment
     /**
      * Sets name.
      *
-     * @param string|null $name  Filename
+     * @param string|null $name  Display name of the file
      *
      * @return $this
      */
@@ -139,7 +143,7 @@ class MessageAttachment
     /**
      * Sets contentType.
      *
-     * @param string|null $contentType
+     * @param string|null $contentType  MIME content type
      *
      * @return $this
      */

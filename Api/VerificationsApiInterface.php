@@ -140,9 +140,23 @@ interface VerificationsApiInterface
     public function verificationsFilesByIdResultGet($id, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
     /**
+     * Operation verificationsFilesByIdVerificationPost
+     *
+     * Start verification
+     *
+     * @param  string $id  File ID to start verification (required)
+     * @param  integer $responseCode     The HTTP response code to return
+     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     *
+     * @return void
+     *
+     */
+    public function verificationsFilesByIdVerificationPost($id, &$responseCode, array &$responseHeaders);
+
+    /**
      * Operation verificationsFilesPost
      *
-     * Verify From File
+     * Upload File with Emails
      *
      * @param  UploadedFile $file   (optional)
      * @param  integer $responseCode     The HTTP response code to return
@@ -156,7 +170,7 @@ interface VerificationsApiInterface
     /**
      * Operation verificationsFilesResultGet
      *
-     * Get Simple Files Verification Results
+     * Get Files Verification Results
      *
      * @param  integer $responseCode     The HTTP response code to return
      * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()

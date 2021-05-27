@@ -540,9 +540,81 @@ class VerificationsController extends Controller
     }
 
     /**
+     * Operation verificationsFilesByIdVerificationPost
+     *
+     * Start verification
+     *
+     * @param Request $request The Symfony request to handle.
+     * @return Response The Symfony response.
+     */
+    public function verificationsFilesByIdVerificationPostAction(Request $request, $id)
+    {
+        // Handle authentication
+        // Authentication 'apikey' required
+        // Set key with prefix in header
+        $securityapikey = $request->headers->get('X-ElasticEmail-ApiKey');
+
+        // Read out all input parameter values into variables
+
+        // Use the default value if no value was provided
+
+        // Deserialize the input values that needs it
+        try {
+            $id = $this->deserialize($id, 'string', 'string');
+        } catch (SerializerRuntimeException $exception) {
+            return $this->createBadRequestResponse($exception->getMessage());
+        }
+
+        // Validate the input values
+        $asserts = [];
+        $asserts[] = new Assert\NotNull();
+        $asserts[] = new Assert\Type("string");
+        $response = $this->validate($id, $asserts);
+        if ($response instanceof Response) {
+            return $response;
+        }
+
+
+        try {
+            $handler = $this->getApiHandler();
+
+            // Set authentication method 'apikey'
+            $handler->setapikey($securityapikey);
+            
+            // Make the call to the business logic
+            $responseCode = 204;
+            $responseHeaders = [];
+            $result = $handler->verificationsFilesByIdVerificationPost($id, $responseCode, $responseHeaders);
+
+            // Find default response message
+            $message = '';
+
+            // Find a more specific message, if available
+            switch ($responseCode) {
+                case 200:
+                    $message = 'OK';
+                    break;
+            }
+
+            return new Response(
+                '',
+                $responseCode,
+                array_merge(
+                    $responseHeaders,
+                    [
+                        'X-OpenAPI-Message' => $message
+                    ]
+                )
+            );
+        } catch (Exception $fallthrough) {
+            return $this->createErrorResponse(new HttpException(500, 'An unsuspected error occurred.', $fallthrough));
+        }
+    }
+
+    /**
      * Operation verificationsFilesPost
      *
-     * Verify From File
+     * Upload File with Emails
      *
      * @param Request $request The Symfony request to handle.
      * @return Response The Symfony response.
@@ -623,7 +695,7 @@ class VerificationsController extends Controller
     /**
      * Operation verificationsFilesResultGet
      *
-     * Get Simple Files Verification Results
+     * Get Files Verification Results
      *
      * @param Request $request The Symfony request to handle.
      * @return Response The Symfony response.

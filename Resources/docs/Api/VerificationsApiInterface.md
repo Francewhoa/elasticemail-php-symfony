@@ -10,8 +10,9 @@ Method | HTTP request | Description
 [**verificationsFilesByIdDelete**](VerificationsApiInterface.md#verificationsFilesByIdDelete) | **DELETE** /verifications/files/{id} | Delete File Verification Result
 [**verificationsFilesByIdResultDownloadGet**](VerificationsApiInterface.md#verificationsFilesByIdResultDownloadGet) | **GET** /verifications/files/{id}/result/download | Download File Verification Result
 [**verificationsFilesByIdResultGet**](VerificationsApiInterface.md#verificationsFilesByIdResultGet) | **GET** /verifications/files/{id}/result | Get Detailed File Verification Result
-[**verificationsFilesPost**](VerificationsApiInterface.md#verificationsFilesPost) | **POST** /verifications/files | Verify From File
-[**verificationsFilesResultGet**](VerificationsApiInterface.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Simple Files Verification Results
+[**verificationsFilesByIdVerificationPost**](VerificationsApiInterface.md#verificationsFilesByIdVerificationPost) | **POST** /verifications/files/{id}/verification | Start verification
+[**verificationsFilesPost**](VerificationsApiInterface.md#verificationsFilesPost) | **POST** /verifications/files | Upload File with Emails
+[**verificationsFilesResultGet**](VerificationsApiInterface.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Files Verification Results
 [**verificationsGet**](VerificationsApiInterface.md#verificationsGet) | **GET** /verifications | Get Emails Verification Results
 
 
@@ -401,12 +402,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+## **verificationsFilesByIdVerificationPost**
+> verificationsFilesByIdVerificationPost($id)
+
+Start verification
+
+Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
+
+### Example Implementation
+```php
+<?php
+// src/Acme/MyBundle/Api/VerificationsApiInterface.php
+
+namespace Acme\MyBundle\Api;
+
+use ElasticEmail\Api\VerificationsApiInterface;
+
+class VerificationsApi implements VerificationsApiInterface
+{
+
+    /**
+     * Configure API key authorization: apikey
+     */
+    public function setapikey($apiKey)
+    {
+        // Retrieve logged in user from $apiKey ...
+    }
+
+    // ...
+
+    /**
+     * Implementation of VerificationsApiInterface#verificationsFilesByIdVerificationPost
+     */
+    public function verificationsFilesByIdVerificationPost($id)
+    {
+        // Implement the operation ...
+    }
+
+    // ...
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| File ID to start verification |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikey](../../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 ## **verificationsFilesPost**
 > ElasticEmail\Model\VerificationFileResult verificationsFilesPost($file)
 
-Verify From File
+Upload File with Emails
 
-Uploads a CSV file with list of emails to verify. An 'email' column is required. Required Access Level: VerifyEmails
+Uploads a CSV file with list of emails that can then be triggered for verification. An 'email' column is required. Required Access Level: VerifyEmails
 
 ### Example Implementation
 ```php
@@ -466,7 +529,7 @@ Name | Type | Description  | Notes
 ## **verificationsFilesResultGet**
 > ElasticEmail\Model\VerificationFileResult verificationsFilesResultGet()
 
-Get Simple Files Verification Results
+Get Files Verification Results
 
 Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
 
