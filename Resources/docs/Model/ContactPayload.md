@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** | Proper email address. | [optional] 
+**email** | **string** | Proper email address. | 
 **status** | [**ContactStatus**](ContactStatus.md) | Status of the given resource | [optional] 
 **firstName** | **string** | First name. | [optional] 
 **lastName** | **string** | Last name. | [optional] 

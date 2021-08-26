@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**to** | **string** | List of recipients (visible to others) | [optional] 
+**to** | **string** | List of recipients (visible to others) | 
 **cC** | **string** | List of Carbon Copy recipients (visible to others) | [optional] 
 **bCC** | **string** | List of Blind Carbon Copy recipients (hidden from other recipients) | [optional] 
 

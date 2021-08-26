@@ -13,7 +13,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -44,8 +44,9 @@ class InboundPayload
         /**
      * Filter of the inbound data
      *
-     * @var string|null
+     * @var string
      * @SerializedName("Filter")
+     * @Assert\NotNull()
      * @Assert\Type("string")
      * @Type("string")
      */
@@ -54,8 +55,9 @@ class InboundPayload
     /**
      * Name of this route
      *
-     * @var string|null
+     * @var string
      * @SerializedName("Name")
+     * @Assert\NotNull()
      * @Assert\Type("string")
      * @Type("string")
      */
@@ -64,8 +66,10 @@ class InboundPayload
     /**
      * Type of the filter
      *
-     * @var InboundRouteFilterType|null
+     * @var InboundRouteFilterType
      * @SerializedName("FilterType")
+     * @Assert\NotNull()
+     * @Assert\Valid()
      * @Assert\Type("InboundRouteFilterType")
      * @Type("InboundRouteFilterType")
      */
@@ -74,8 +78,10 @@ class InboundPayload
     /**
      * Type of action to take
      *
-     * @var InboundRouteActionType|null
+     * @var InboundRouteActionType
      * @SerializedName("ActionType")
+     * @Assert\NotNull()
+     * @Assert\Valid()
      * @Assert\Type("InboundRouteActionType")
      * @Type("InboundRouteActionType")
      */
@@ -118,7 +124,7 @@ class InboundPayload
     /**
      * Gets filter.
      *
-     * @return string|null
+     * @return string
      */
     public function getFilter()
     {
@@ -128,11 +134,11 @@ class InboundPayload
     /**
      * Sets filter.
      *
-     * @param string|null $filter  Filter of the inbound data
+     * @param string $filter  Filter of the inbound data
      *
      * @return $this
      */
-    public function setFilter($filter = null)
+    public function setFilter($filter)
     {
         $this->filter = $filter;
 
@@ -142,7 +148,7 @@ class InboundPayload
     /**
      * Gets name.
      *
-     * @return string|null
+     * @return string
      */
     public function getName()
     {
@@ -152,11 +158,11 @@ class InboundPayload
     /**
      * Sets name.
      *
-     * @param string|null $name  Name of this route
+     * @param string $name  Name of this route
      *
      * @return $this
      */
-    public function setName($name = null)
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -166,7 +172,7 @@ class InboundPayload
     /**
      * Gets filterType.
      *
-     * @return InboundRouteFilterType|null
+     * @return InboundRouteFilterType
      */
     public function getFilterType()
     {
@@ -176,11 +182,11 @@ class InboundPayload
     /**
      * Sets filterType.
      *
-     * @param InboundRouteFilterType|null $filterType  Type of the filter
+     * @param InboundRouteFilterType $filterType  Type of the filter
      *
      * @return $this
      */
-    public function setFilterType($filterType = null)
+    public function setFilterType($filterType)
     {
         $this->filterType = $filterType;
 
@@ -190,7 +196,7 @@ class InboundPayload
     /**
      * Gets actionType.
      *
-     * @return InboundRouteActionType|null
+     * @return InboundRouteActionType
      */
     public function getActionType()
     {
@@ -200,11 +206,11 @@ class InboundPayload
     /**
      * Sets actionType.
      *
-     * @param InboundRouteActionType|null $actionType  Type of action to take
+     * @param InboundRouteActionType $actionType  Type of action to take
      *
      * @return $this
      */
-    public function setActionType($actionType = null)
+    public function setActionType($actionType)
     {
         $this->actionType = $actionType;
 

@@ -12,7 +12,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -59,13 +59,12 @@ interface ListsApiInterface
      *
      * Add Contacts to List
      *
-     * @param  string $name  Name of your list. (required)
-     * @param  ElasticEmail\Model\EmailsPayload $emailsPayload  Provide either rule or a list of emails, not both. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of your list. (required)
+     * @param  \ElasticEmail\Model\EmailsPayload $emailsPayload  Provide either rule or a list of emails, not both. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ContactsList
-     *
+     * @return \ElasticEmail\Model\ContactsList
      */
     public function listsByNameContactsPost($name, EmailsPayload $emailsPayload, &$responseCode, array &$responseHeaders);
 
@@ -74,13 +73,12 @@ interface ListsApiInterface
      *
      * Remove Contacts from List
      *
-     * @param  string $name  Name of your list. (required)
-     * @param  ElasticEmail\Model\EmailsPayload $emailsPayload  Provide either rule or a list of emails, not both. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of your list. (required)
+     * @param  \ElasticEmail\Model\EmailsPayload $emailsPayload  Provide either rule or a list of emails, not both. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function listsByNameContactsRemovePost($name, EmailsPayload $emailsPayload, &$responseCode, array &$responseHeaders);
 
@@ -89,12 +87,11 @@ interface ListsApiInterface
      *
      * Delete List
      *
-     * @param  string $name  Name of your list. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of your list. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function listsByNameDelete($name, &$responseCode, array &$responseHeaders);
 
@@ -103,12 +100,11 @@ interface ListsApiInterface
      *
      * Load List
      *
-     * @param  string $name  Name of your list. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of your list. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ContactsList
-     *
+     * @return \ElasticEmail\Model\ContactsList
      */
     public function listsByNameGet($name, &$responseCode, array &$responseHeaders);
 
@@ -117,13 +113,12 @@ interface ListsApiInterface
      *
      * Update List
      *
-     * @param  string $name  Name of your list. (required)
-     * @param  ElasticEmail\Model\ListUpdatePayload $listUpdatePayload   (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of your list. (required)
+     * @param  \ElasticEmail\Model\ListUpdatePayload $listUpdatePayload   (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ContactsList
-     *
+     * @return \ElasticEmail\Model\ContactsList
      */
     public function listsByNamePut($name, ListUpdatePayload $listUpdatePayload, &$responseCode, array &$responseHeaders);
 
@@ -132,13 +127,12 @@ interface ListsApiInterface
      *
      * Load Lists
      *
-     * @param  int $limit  Maximum number of returned items. (optional)
-     * @param  int $offset  How many items should be returned ahead. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \int $limit  Maximum number of returned items. (optional)
+     * @param  \int $offset  How many items should be returned ahead. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ContactsList[]
-     *
+     * @return \ElasticEmail\Model\ContactsList[]
      */
     public function listsGet($limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
@@ -147,12 +141,11 @@ interface ListsApiInterface
      *
      * Add List
      *
-     * @param  ElasticEmail\Model\ListPayload $listPayload   (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \ElasticEmail\Model\ListPayload $listPayload   (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ContactsList
-     *
+     * @return \ElasticEmail\Model\ContactsList
      */
     public function listsPost(ListPayload $listPayload, &$responseCode, array &$responseHeaders);
 }

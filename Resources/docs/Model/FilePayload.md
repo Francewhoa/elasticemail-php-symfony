@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**binaryContent** | **string** | Content of the file sent as binary data | [optional] 
+**binaryContent** | **string** | Content of the file sent as binary data | 
 **name** | **string** | Filename | [optional] 
 **contentType** | **string** | Type of file&#39;s content (e.g. image/jpeg) | [optional] 
 

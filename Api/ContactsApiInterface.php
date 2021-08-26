@@ -12,7 +12,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -64,12 +64,11 @@ interface ContactsApiInterface
      *
      * Delete Contact
      *
-     * @param  string $email  Proper email address. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Proper email address. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function contactsByEmailDelete($email, &$responseCode, array &$responseHeaders);
 
@@ -78,12 +77,11 @@ interface ContactsApiInterface
      *
      * Load Contact
      *
-     * @param  string $email  Proper email address. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Proper email address. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Contact
-     *
+     * @return \ElasticEmail\Model\Contact
      */
     public function contactsByEmailGet($email, &$responseCode, array &$responseHeaders);
 
@@ -92,14 +90,13 @@ interface ContactsApiInterface
      *
      * Load History
      *
-     * @param  string $email  Proper email address. (required)
-     * @param  int $limit  Maximum number of returned items. (optional)
-     * @param  int $offset  How many items should be returned ahead. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Proper email address. (required)
+     * @param  \int $limit  Maximum number of returned items. (optional)
+     * @param  \int $offset  How many items should be returned ahead. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ContactHistory[]
-     *
+     * @return \ElasticEmail\Model\ContactHistory[]
      */
     public function contactsByEmailHistoryGet($email, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
@@ -108,13 +105,12 @@ interface ContactsApiInterface
      *
      * Update Contact
      *
-     * @param  string $email  Proper email address. (required)
-     * @param  ElasticEmail\Model\ContactUpdatePayload $contactUpdatePayload   (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Proper email address. (required)
+     * @param  \ElasticEmail\Model\ContactUpdatePayload $contactUpdatePayload   (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Contact
-     *
+     * @return \ElasticEmail\Model\Contact
      */
     public function contactsByEmailPut($email, ContactUpdatePayload $contactUpdatePayload, &$responseCode, array &$responseHeaders);
 
@@ -123,12 +119,11 @@ interface ContactsApiInterface
      *
      * Delete Contacts Bulk
      *
-     * @param  ElasticEmail\Model\EmailsPayload $emailsPayload  Provide either rule or a list of emails, not both. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \ElasticEmail\Model\EmailsPayload $emailsPayload  Provide either rule or a list of emails, not both. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function contactsDeletePost(EmailsPayload $emailsPayload, &$responseCode, array &$responseHeaders);
 
@@ -137,12 +132,11 @@ interface ContactsApiInterface
      *
      * Check Export Status
      *
-     * @param  string $id  ID of the exported file (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $id  ID of the exported file (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ExportStatus
-     *
+     * @return \ElasticEmail\Model\ExportStatus
      */
     public function contactsExportByIdStatusGet($id, &$responseCode, array &$responseHeaders);
 
@@ -151,16 +145,15 @@ interface ContactsApiInterface
      *
      * Export Contacts
      *
-     * @param  ExportFileFormats $fileFormat  Format of the exported file (optional)
-     * @param  string $rule  Query used for filtering. (optional)
-     * @param  string[] $emails  Comma delimited list of contact emails (optional)
-     * @param  CompressionFormat $compressionFormat  FileResponse compression format. None or Zip. (optional)
-     * @param  string $fileName  Name of your file including extension. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \ExportFileFormats $fileFormat  Format of the exported file (optional)
+     * @param  \string $rule  Query used for filtering. (optional)
+     * @param  \string[] $emails  Comma delimited list of contact emails (optional)
+     * @param  \CompressionFormat $compressionFormat  FileResponse compression format. None or Zip. (optional)
+     * @param  \string $fileName  Name of your file including extension. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ExportLink
-     *
+     * @return \ElasticEmail\Model\ExportLink
      */
     public function contactsExportPost($fileFormat = null, $rule = null, array $emails = null, $compressionFormat = null, $fileName = null, &$responseCode, array &$responseHeaders);
 
@@ -169,13 +162,12 @@ interface ContactsApiInterface
      *
      * Load Contacts
      *
-     * @param  int $limit  Maximum number of returned items. (optional)
-     * @param  int $offset  How many items should be returned ahead. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \int $limit  Maximum number of returned items. (optional)
+     * @param  \int $offset  How many items should be returned ahead. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Contact[]
-     *
+     * @return \ElasticEmail\Model\Contact[]
      */
     public function contactsGet($limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
@@ -184,14 +176,13 @@ interface ContactsApiInterface
      *
      * Upload Contacts
      *
-     * @param  string $listName  Name of an existing list to add these contacts to (optional)
-     * @param  string $encodingName  In what encoding the file is uploaded (optional)
-     * @param  UploadedFile $file   (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $listName  Name of an existing list to add these contacts to (optional)
+     * @param  \string $encodingName  In what encoding the file is uploaded (optional)
+     * @param  \UploadedFile $file   (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function contactsImportPost($listName = null, $encodingName = null, UploadedFile $file = null, &$responseCode, array &$responseHeaders);
 
@@ -200,13 +191,12 @@ interface ContactsApiInterface
      *
      * Add Contact
      *
-     * @param  ElasticEmail\Model\ContactPayload[] $contactPayload   (required)
-     * @param  string[] $listnames  Names of lists to which the uploaded contacts should be added to (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \ElasticEmail\Model\ContactPayload[] $contactPayload   (required)
+     * @param  \string[] $listnames  Names of lists to which the uploaded contacts should be added to (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Contact[]
-     *
+     * @return \ElasticEmail\Model\Contact[]
      */
     public function contactsPost(array $contactPayload, array $listnames = null, &$responseCode, array &$responseHeaders);
 }

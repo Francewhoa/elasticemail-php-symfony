@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Template name | [optional] 
+**name** | **string** | Template name | 
 **subject** | **string** | Default subject of email. | [optional] 
 **body** | [**ElasticEmail\Model\BodyPart**](BodyPart.md) | Email content of this template | [optional] 
 **templateScope** | [**TemplateScope**](TemplateScope.md) | Visibility of a template | [optional] 

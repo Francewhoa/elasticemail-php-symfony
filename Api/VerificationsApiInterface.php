@@ -12,7 +12,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -58,12 +58,11 @@ interface VerificationsApiInterface
      *
      * Delete Email Verification Result
      *
-     * @param  string $email  Email address to verification (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Email address to verification (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function verificationsByEmailDelete($email, &$responseCode, array &$responseHeaders);
 
@@ -72,12 +71,11 @@ interface VerificationsApiInterface
      *
      * Get Email Verification Result
      *
-     * @param  string $email  Email address to view verification result of (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Email address to view verification result of (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\EmailValidationResult
-     *
+     * @return \ElasticEmail\Model\EmailValidationResult
      */
     public function verificationsByEmailGet($email, &$responseCode, array &$responseHeaders);
 
@@ -86,12 +84,11 @@ interface VerificationsApiInterface
      *
      * Verify Email
      *
-     * @param  string $email  Email address to verify (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Email address to verify (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\EmailValidationResult
-     *
+     * @return \ElasticEmail\Model\EmailValidationResult
      */
     public function verificationsByEmailPost($email, &$responseCode, array &$responseHeaders);
 
@@ -100,12 +97,11 @@ interface VerificationsApiInterface
      *
      * Delete File Verification Result
      *
-     * @param  string $id  ID of the exported file (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $id  ID of the exported file (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function verificationsFilesByIdDelete($id, &$responseCode, array &$responseHeaders);
 
@@ -114,12 +110,11 @@ interface VerificationsApiInterface
      *
      * Download File Verification Result
      *
-     * @param  string $id  Verification ID to download (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $id  Verification ID to download (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return UploadedFile
-     *
+     * @return \UploadedFile
      */
     public function verificationsFilesByIdResultDownloadGet($id, &$responseCode, array &$responseHeaders);
 
@@ -128,14 +123,13 @@ interface VerificationsApiInterface
      *
      * Get Detailed File Verification Result
      *
-     * @param  string $id  ID of the Verification to display status of (required)
-     * @param  int $limit  Maximum number of returned email verification results (optional)
-     * @param  int $offset  How many result items should be returned ahead (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $id  ID of the Verification to display status of (required)
+     * @param  \int $limit  Maximum number of returned email verification results (optional)
+     * @param  \int $offset  How many result items should be returned ahead (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\VerificationFileResultDetails
-     *
+     * @return \ElasticEmail\Model\VerificationFileResultDetails
      */
     public function verificationsFilesByIdResultGet($id, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
@@ -144,12 +138,11 @@ interface VerificationsApiInterface
      *
      * Start verification
      *
-     * @param  string $id  File ID to start verification (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $id  File ID to start verification (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function verificationsFilesByIdVerificationPost($id, &$responseCode, array &$responseHeaders);
 
@@ -158,12 +151,11 @@ interface VerificationsApiInterface
      *
      * Upload File with Emails
      *
-     * @param  UploadedFile $file   (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \UploadedFile $file   (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\VerificationFileResult
-     *
+     * @return \ElasticEmail\Model\VerificationFileResult
      */
     public function verificationsFilesPost(UploadedFile $file = null, &$responseCode, array &$responseHeaders);
 
@@ -172,11 +164,10 @@ interface VerificationsApiInterface
      *
      * Get Files Verification Results
      *
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\VerificationFileResult[]
-     *
+     * @return \ElasticEmail\Model\VerificationFileResult[]
      */
     public function verificationsFilesResultGet(&$responseCode, array &$responseHeaders);
 
@@ -185,13 +176,12 @@ interface VerificationsApiInterface
      *
      * Get Emails Verification Results
      *
-     * @param  int $limit  Maximum number of returned items. (optional)
-     * @param  int $offset  How many items should be returned ahead. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \int $limit  Maximum number of returned items. (optional)
+     * @param  \int $offset  How many items should be returned ahead. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\EmailValidationResult[]
-     *
+     * @return \ElasticEmail\Model\EmailValidationResult[]
      */
     public function verificationsGet($limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 }

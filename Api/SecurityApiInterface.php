@@ -12,7 +12,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -61,13 +61,12 @@ interface SecurityApiInterface
      *
      * Delete ApiKey
      *
-     * @param  string $name  Name of the ApiKey (required)
-     * @param  string $subaccount  Email of the subaccount of which ApiKey should be deleted (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of the ApiKey (required)
+     * @param  \string $subaccount  Email of the subaccount of which ApiKey should be deleted (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function securityApikeysByNameDelete($name, $subaccount = null, &$responseCode, array &$responseHeaders);
 
@@ -76,13 +75,12 @@ interface SecurityApiInterface
      *
      * Load ApiKey
      *
-     * @param  string $name  Name of the ApiKey (required)
-     * @param  string $subaccount  Email of the subaccount of which ApiKey should be loaded (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of the ApiKey (required)
+     * @param  \string $subaccount  Email of the subaccount of which ApiKey should be loaded (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ApiKey
-     *
+     * @return \ElasticEmail\Model\ApiKey
      */
     public function securityApikeysByNameGet($name, $subaccount = null, &$responseCode, array &$responseHeaders);
 
@@ -91,13 +89,12 @@ interface SecurityApiInterface
      *
      * Update ApiKey
      *
-     * @param  string $name  Name of the ApiKey (required)
-     * @param  ElasticEmail\Model\ApiKeyPayload $apiKeyPayload   (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of the ApiKey (required)
+     * @param  \ElasticEmail\Model\ApiKeyPayload $apiKeyPayload   (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ApiKey
-     *
+     * @return \ElasticEmail\Model\ApiKey
      */
     public function securityApikeysByNamePut($name, ApiKeyPayload $apiKeyPayload, &$responseCode, array &$responseHeaders);
 
@@ -106,12 +103,11 @@ interface SecurityApiInterface
      *
      * List ApiKeys
      *
-     * @param  string $subaccount  Email of the subaccount of which ApiKeys should be loaded (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $subaccount  Email of the subaccount of which ApiKeys should be loaded (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\ApiKey[]
-     *
+     * @return \ElasticEmail\Model\ApiKey[]
      */
     public function securityApikeysGet($subaccount = null, &$responseCode, array &$responseHeaders);
 
@@ -120,12 +116,11 @@ interface SecurityApiInterface
      *
      * Add ApiKey
      *
-     * @param  ElasticEmail\Model\ApiKeyPayload $apiKeyPayload   (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \ElasticEmail\Model\ApiKeyPayload $apiKeyPayload   (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\NewApiKey
-     *
+     * @return \ElasticEmail\Model\NewApiKey
      */
     public function securityApikeysPost(ApiKeyPayload $apiKeyPayload, &$responseCode, array &$responseHeaders);
 
@@ -134,13 +129,12 @@ interface SecurityApiInterface
      *
      * Delete SMTP Credential
      *
-     * @param  string $name  Name of the SMTP Credential (required)
-     * @param  string $subaccount  Email of the subaccount of which credential should be deleted (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of the SMTP Credential (required)
+     * @param  \string $subaccount  Email of the subaccount of which credential should be deleted (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function securitySmtpByNameDelete($name, $subaccount = null, &$responseCode, array &$responseHeaders);
 
@@ -149,13 +143,12 @@ interface SecurityApiInterface
      *
      * Load SMTP Credential
      *
-     * @param  string $name  Name of the SMTP Credential (required)
-     * @param  string $subaccount  Email of the subaccount of which credential should be loaded (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of the SMTP Credential (required)
+     * @param  \string $subaccount  Email of the subaccount of which credential should be loaded (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\SmtpCredentials
-     *
+     * @return \ElasticEmail\Model\SmtpCredentials
      */
     public function securitySmtpByNameGet($name, $subaccount = null, &$responseCode, array &$responseHeaders);
 
@@ -164,13 +157,12 @@ interface SecurityApiInterface
      *
      * Update SMTP Credential
      *
-     * @param  string $name  Name of the SMTP Credential (required)
-     * @param  ElasticEmail\Model\SmtpCredentialsPayload $smtpCredentialsPayload   (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $name  Name of the SMTP Credential (required)
+     * @param  \ElasticEmail\Model\SmtpCredentialsPayload $smtpCredentialsPayload   (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\SmtpCredentials
-     *
+     * @return \ElasticEmail\Model\SmtpCredentials
      */
     public function securitySmtpByNamePut($name, SmtpCredentialsPayload $smtpCredentialsPayload, &$responseCode, array &$responseHeaders);
 
@@ -179,12 +171,11 @@ interface SecurityApiInterface
      *
      * List SMTP Credentials
      *
-     * @param  string $subaccount  Email of the subaccount of which credentials should be listed (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $subaccount  Email of the subaccount of which credentials should be listed (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\SmtpCredentials[]
-     *
+     * @return \ElasticEmail\Model\SmtpCredentials[]
      */
     public function securitySmtpGet($subaccount = null, &$responseCode, array &$responseHeaders);
 
@@ -193,12 +184,11 @@ interface SecurityApiInterface
      *
      * Add SMTP Credential
      *
-     * @param  ElasticEmail\Model\SmtpCredentialsPayload $smtpCredentialsPayload   (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \ElasticEmail\Model\SmtpCredentialsPayload $smtpCredentialsPayload   (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\NewSmtpCredentials
-     *
+     * @return \ElasticEmail\Model\NewSmtpCredentials
      */
     public function securitySmtpPost(SmtpCredentialsPayload $smtpCredentialsPayload, &$responseCode, array &$responseHeaders);
 }

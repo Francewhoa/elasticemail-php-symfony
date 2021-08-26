@@ -12,7 +12,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -56,14 +56,13 @@ interface SuppressionsApiInterface
      *
      * Get Bounce List
      *
-     * @param  string $search  Text fragment used for searching. (optional)
-     * @param  int $limit  Maximum number of returned items. (optional)
-     * @param  int $offset  How many items should be returned ahead. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $search  Text fragment used for searching. (optional)
+     * @param  \int $limit  Maximum number of returned items. (optional)
+     * @param  \int $offset  How many items should be returned ahead. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Suppression[]
-     *
+     * @return \ElasticEmail\Model\Suppression[]
      */
     public function suppressionsBouncesGet($search = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
@@ -72,12 +71,11 @@ interface SuppressionsApiInterface
      *
      * Add Bounces Async
      *
-     * @param  UploadedFile $file   (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \UploadedFile $file   (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function suppressionsBouncesImportPost(UploadedFile $file = null, &$responseCode, array &$responseHeaders);
 
@@ -86,12 +84,11 @@ interface SuppressionsApiInterface
      *
      * Add Bounces
      *
-     * @param  string[] $requestBody  Emails to add as bounces. Limited to 1000 per request (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string[] $requestBody  Emails to add as bounces. Limited to 1000 per request (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Suppression[]
-     *
+     * @return \ElasticEmail\Model\Suppression[]
      */
     public function suppressionsBouncesPost(array $requestBody, &$responseCode, array &$responseHeaders);
 
@@ -100,12 +97,11 @@ interface SuppressionsApiInterface
      *
      * Delete Suppression
      *
-     * @param  string $email  Proper email address. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Proper email address. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function suppressionsByEmailDelete($email, &$responseCode, array &$responseHeaders);
 
@@ -114,12 +110,11 @@ interface SuppressionsApiInterface
      *
      * Get Suppression
      *
-     * @param  string $email  Proper email address. (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $email  Proper email address. (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Suppression
-     *
+     * @return \ElasticEmail\Model\Suppression
      */
     public function suppressionsByEmailGet($email, &$responseCode, array &$responseHeaders);
 
@@ -128,14 +123,13 @@ interface SuppressionsApiInterface
      *
      * Get Complaints List
      *
-     * @param  string $search  Text fragment used for searching. (optional)
-     * @param  int $limit  Maximum number of returned items. (optional)
-     * @param  int $offset  How many items should be returned ahead. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $search  Text fragment used for searching. (optional)
+     * @param  \int $limit  Maximum number of returned items. (optional)
+     * @param  \int $offset  How many items should be returned ahead. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Suppression[]
-     *
+     * @return \ElasticEmail\Model\Suppression[]
      */
     public function suppressionsComplaintsGet($search = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
@@ -144,12 +138,11 @@ interface SuppressionsApiInterface
      *
      * Add Complaints Async
      *
-     * @param  UploadedFile $file   (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \UploadedFile $file   (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function suppressionsComplaintsImportPost(UploadedFile $file = null, &$responseCode, array &$responseHeaders);
 
@@ -158,12 +151,11 @@ interface SuppressionsApiInterface
      *
      * Add Complaints
      *
-     * @param  string[] $requestBody  Emails to add as complaints. Limited to 1000 per request (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string[] $requestBody  Emails to add as complaints. Limited to 1000 per request (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Suppression[]
-     *
+     * @return \ElasticEmail\Model\Suppression[]
      */
     public function suppressionsComplaintsPost(array $requestBody, &$responseCode, array &$responseHeaders);
 
@@ -172,13 +164,12 @@ interface SuppressionsApiInterface
      *
      * Get Suppressions
      *
-     * @param  int $limit  Maximum number of returned items. (optional)
-     * @param  int $offset  How many items should be returned ahead. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \int $limit  Maximum number of returned items. (optional)
+     * @param  \int $offset  How many items should be returned ahead. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Suppression[]
-     *
+     * @return \ElasticEmail\Model\Suppression[]
      */
     public function suppressionsGet($limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
@@ -187,14 +178,13 @@ interface SuppressionsApiInterface
      *
      * Get Unsubscribes List
      *
-     * @param  string $search  Text fragment used for searching. (optional)
-     * @param  int $limit  Maximum number of returned items. (optional)
-     * @param  int $offset  How many items should be returned ahead. (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string $search  Text fragment used for searching. (optional)
+     * @param  \int $limit  Maximum number of returned items. (optional)
+     * @param  \int $offset  How many items should be returned ahead. (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Suppression[]
-     *
+     * @return \ElasticEmail\Model\Suppression[]
      */
     public function suppressionsUnsubscribesGet($search = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
@@ -203,12 +193,11 @@ interface SuppressionsApiInterface
      *
      * Add Unsubscribes Async
      *
-     * @param  UploadedFile $file   (optional)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \UploadedFile $file   (optional)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return void
-     *
      */
     public function suppressionsUnsubscribesImportPost(UploadedFile $file = null, &$responseCode, array &$responseHeaders);
 
@@ -217,12 +206,11 @@ interface SuppressionsApiInterface
      *
      * Add Unsubscribes
      *
-     * @param  string[] $requestBody  Emails to add as unsubscribes. Limited to 1000 per request (required)
-     * @param  integer $responseCode     The HTTP response code to return
-     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     * @param  \string[] $requestBody  Emails to add as unsubscribes. Limited to 1000 per request (required)
+     * @param  \int $responseCode     The HTTP response code to return
+     * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return ElasticEmail\Model\Suppression[]
-     *
+     * @return \ElasticEmail\Model\Suppression[]
      */
     public function suppressionsUnsubscribesPost(array $requestBody, &$responseCode, array &$responseHeaders);
 }

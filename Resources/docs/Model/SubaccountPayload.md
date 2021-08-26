@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** | Proper email address. | [optional] 
-**password** | **string** | Current password. | [optional] 
+**email** | **string** | Proper email address. | 
+**password** | **string** | Current password. | 
 **sendActivation** | **bool** | True, if you want to send activation email to this Account to confirm the creation of a new SubAccount. Otherwise, false (SubAccount will immediately be Active). | [optional] 
 **settings** | [**SubaccountSettingsInfoPayload**](SubaccountSettingsInfoPayload.md) | SubAccount settings | [optional] 
 

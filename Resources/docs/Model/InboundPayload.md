@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filter** | **string** | Filter of the inbound data | [optional] 
-**name** | **string** | Name of this route | [optional] 
-**filterType** | [**InboundRouteFilterType**](InboundRouteFilterType.md) | Type of the filter | [optional] 
-**actionType** | [**InboundRouteActionType**](InboundRouteActionType.md) | Type of action to take | [optional] 
+**filter** | **string** | Filter of the inbound data | 
+**name** | **string** | Name of this route | 
+**filterType** | [**InboundRouteFilterType**](InboundRouteFilterType.md) | Type of the filter | 
+**actionType** | [**InboundRouteActionType**](InboundRouteActionType.md) | Type of action to take | 
 **emailAddress** | **string** | Email to forward the inbound to | [optional] 
 **httpAddress** | **string** | Address to notify about the inbound | [optional] 
 

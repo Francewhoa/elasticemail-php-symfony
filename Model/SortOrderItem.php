@@ -13,7 +13,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -44,8 +44,11 @@ use JMS\Serializer\Annotation\SerializedName;
 class SortOrderItem 
 {
         /**
-     * @var string|null
+     * ID of the route to change the order of
+     *
+     * @var string
      * @SerializedName("PublicInboundId")
+     * @Assert\NotNull()
      * @Assert\Type("string")
      * @Type("string")
      */
@@ -54,8 +57,9 @@ class SortOrderItem
     /**
      * 1 - route will be used first
      *
-     * @var int|null
+     * @var int
      * @SerializedName("SortOrder")
+     * @Assert\NotNull()
      * @Assert\Type("int")
      * @Type("int")
      */
@@ -74,7 +78,7 @@ class SortOrderItem
     /**
      * Gets publicInboundId.
      *
-     * @return string|null
+     * @return string
      */
     public function getPublicInboundId()
     {
@@ -84,11 +88,11 @@ class SortOrderItem
     /**
      * Sets publicInboundId.
      *
-     * @param string|null $publicInboundId
+     * @param string $publicInboundId  ID of the route to change the order of
      *
      * @return $this
      */
-    public function setPublicInboundId($publicInboundId = null)
+    public function setPublicInboundId($publicInboundId)
     {
         $this->publicInboundId = $publicInboundId;
 
@@ -98,7 +102,7 @@ class SortOrderItem
     /**
      * Gets sortOrder.
      *
-     * @return int|null
+     * @return int
      */
     public function getSortOrder()
     {
@@ -108,11 +112,11 @@ class SortOrderItem
     /**
      * Sets sortOrder.
      *
-     * @param int|null $sortOrder  1 - route will be used first
+     * @param int $sortOrder  1 - route will be used first
      *
      * @return $this
      */
-    public function setSortOrder($sortOrder = null)
+    public function setSortOrder($sortOrder)
     {
         $this->sortOrder = $sortOrder;
 

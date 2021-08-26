@@ -13,7 +13,7 @@
 /**
  * Elastic Email REST API
  *
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -46,8 +46,9 @@ class ApiKeyPayload
         /**
      * Name of the ApiKey for ease of reference.
      *
-     * @var string|null
+     * @var string
      * @SerializedName("Name")
+     * @Assert\NotNull()
      * @Assert\Type("string")
      * @Type("string")
      */
@@ -56,8 +57,10 @@ class ApiKeyPayload
     /**
      * Access level or permission to be assigned to this ApiKey.
      *
-     * @var ElasticEmail\Model\AccessLevel[]|null
+     * @var ElasticEmail\Model\AccessLevel[]
      * @SerializedName("AccessLevel")
+     * @Assert\NotNull()
+     * @Assert\Valid()
      * @Assert\All({
      *   @Assert\Type("ElasticEmail\Model\AccessLevel")
      * })
@@ -113,7 +116,7 @@ class ApiKeyPayload
     /**
      * Gets name.
      *
-     * @return string|null
+     * @return string
      */
     public function getName()
     {
@@ -123,11 +126,11 @@ class ApiKeyPayload
     /**
      * Sets name.
      *
-     * @param string|null $name  Name of the ApiKey for ease of reference.
+     * @param string $name  Name of the ApiKey for ease of reference.
      *
      * @return $this
      */
-    public function setName($name = null)
+    public function setName($name)
     {
         $this->name = $name;
 
@@ -137,9 +140,9 @@ class ApiKeyPayload
     /**
      * Gets accessLevel.
      *
-     * @return ElasticEmail\Model\AccessLevel[]|null
+     * @return ElasticEmail\Model\AccessLevel[]
      */
-    public function getAccessLevel(): ?array
+    public function getAccessLevel(): array
     {
         return $this->accessLevel;
     }
@@ -147,11 +150,11 @@ class ApiKeyPayload
     /**
      * Sets accessLevel.
      *
-     * @param ElasticEmail\Model\AccessLevel[]|null $accessLevel  Access level or permission to be assigned to this ApiKey.
+     * @param ElasticEmail\Model\AccessLevel[] $accessLevel  Access level or permission to be assigned to this ApiKey.
      *
      * @return $this
      */
-    public function setAccessLevel(array $accessLevel = null)
+    public function setAccessLevel(array $accessLevel)
     {
         $this->accessLevel = $accessLevel;
 

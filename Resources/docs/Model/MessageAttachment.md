@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**binaryContent** | **string** | File&#39;s content as byte array (or a Base64 string) | [optional] 
+**binaryContent** | **string** | File&#39;s content as byte array (or a Base64 string) | 
 **name** | **string** | Display name of the file | [optional] 
 **contentType** | **string** | MIME content type | [optional] 
 
