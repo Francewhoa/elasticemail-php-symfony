@@ -86,7 +86,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 ## **templatesByNameGet**
-> Template templatesByNameGet($name)
+> ElasticEmail\Model\Template templatesByNameGet($name)
 
 Load Template
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Template**](../Model/Template.md)
+[**ElasticEmail\Model\Template**](../Model/Template.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 ## **templatesPost**
-> Template templatesPost($templatePayload)
+> ElasticEmail\Model\Template templatesPost($templatePayload)
 
 Add Template
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Template**](../Model/Template.md)
+[**ElasticEmail\Model\Template**](../Model/Template.md)
 
 ### Authorization
 

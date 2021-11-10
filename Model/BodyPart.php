@@ -44,14 +44,12 @@ use JMS\Serializer\Annotation\SerializedName;
 class BodyPart 
 {
         /**
-     * Type of the body part
-     *
-     * @var BodyContentType
+     * @var ElasticEmail\Model\BodyContentType
      * @SerializedName("ContentType")
      * @Assert\NotNull()
      * @Assert\Valid()
-     * @Assert\Type("BodyContentType")
-     * @Type("BodyContentType")
+     * @Assert\Type("ElasticEmail\Model\BodyContentType")
+     * @Type("ElasticEmail\Model\BodyContentType")
      */
     protected $contentType;
 
@@ -89,9 +87,9 @@ class BodyPart
     /**
      * Gets contentType.
      *
-     * @return BodyContentType
+     * @return ElasticEmail\Model\BodyContentType
      */
-    public function getContentType()
+    public function getContentType(): BodyContentType
     {
         return $this->contentType;
     }
@@ -99,11 +97,11 @@ class BodyPart
     /**
      * Sets contentType.
      *
-     * @param BodyContentType $contentType  Type of the body part
+     * @param ElasticEmail\Model\BodyContentType $contentType
      *
      * @return $this
      */
-    public function setContentType($contentType)
+    public function setContentType(BodyContentType $contentType)
     {
         $this->contentType = $contentType;
 

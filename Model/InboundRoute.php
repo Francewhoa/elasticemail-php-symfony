@@ -60,12 +60,10 @@ class InboundRoute
     protected $name;
 
     /**
-     * Type of the filter
-     *
-     * @var InboundRouteFilterType|null
+     * @var ElasticEmail\Model\InboundRouteFilterType|null
      * @SerializedName("FilterType")
-     * @Assert\Type("InboundRouteFilterType")
-     * @Type("InboundRouteFilterType")
+     * @Assert\Type("ElasticEmail\Model\InboundRouteFilterType")
+     * @Type("ElasticEmail\Model\InboundRouteFilterType")
      */
     protected $filterType;
 
@@ -80,12 +78,10 @@ class InboundRoute
     protected $filter;
 
     /**
-     * Type of action to take
-     *
-     * @var InboundRouteActionType|null
+     * @var ElasticEmail\Model\InboundRouteActionType|null
      * @SerializedName("ActionType")
-     * @Assert\Type("InboundRouteActionType")
-     * @Type("InboundRouteActionType")
+     * @Assert\Type("ElasticEmail\Model\InboundRouteActionType")
+     * @Type("ElasticEmail\Model\InboundRouteActionType")
      */
     protected $actionType;
 
@@ -175,9 +171,9 @@ class InboundRoute
     /**
      * Gets filterType.
      *
-     * @return InboundRouteFilterType|null
+     * @return ElasticEmail\Model\InboundRouteFilterType|null
      */
-    public function getFilterType()
+    public function getFilterType(): ?InboundRouteFilterType
     {
         return $this->filterType;
     }
@@ -185,11 +181,11 @@ class InboundRoute
     /**
      * Sets filterType.
      *
-     * @param InboundRouteFilterType|null $filterType  Type of the filter
+     * @param ElasticEmail\Model\InboundRouteFilterType|null $filterType
      *
      * @return $this
      */
-    public function setFilterType($filterType = null)
+    public function setFilterType(InboundRouteFilterType $filterType = null)
     {
         $this->filterType = $filterType;
 
@@ -223,9 +219,9 @@ class InboundRoute
     /**
      * Gets actionType.
      *
-     * @return InboundRouteActionType|null
+     * @return ElasticEmail\Model\InboundRouteActionType|null
      */
-    public function getActionType()
+    public function getActionType(): ?InboundRouteActionType
     {
         return $this->actionType;
     }
@@ -233,11 +229,11 @@ class InboundRoute
     /**
      * Sets actionType.
      *
-     * @param InboundRouteActionType|null $actionType  Type of action to take
+     * @param ElasticEmail\Model\InboundRouteActionType|null $actionType
      *
      * @return $this
      */
-    public function setActionType($actionType = null)
+    public function setActionType(InboundRouteActionType $actionType = null)
     {
         $this->actionType = $actionType;
 

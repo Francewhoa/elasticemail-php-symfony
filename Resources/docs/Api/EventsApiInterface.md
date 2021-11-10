@@ -57,7 +57,7 @@ class EventsApi implements EventsApiInterface
     /**
      * Implementation of EventsApiInterface#eventsByTransactionidGet
      */
-    public function eventsByTransactionidGet($transactionid, \DateTime $from = null, \DateTime $to = null, $orderBy = null, $limit = null, $offset = null)
+    public function eventsByTransactionidGet($transactionid, \DateTime $from = null, \DateTime $to = null, EventsOrderBy $orderBy = null, $limit = null, $offset = null)
     {
         // Implement the operation ...
     }
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
  **transactionid** | **string**| ID number of transaction |
  **from** | **\DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **\DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](../Model/.md)|  | [optional]
+ **orderBy** | [**ElasticEmail\Model\EventsOrderBy**](../Model/.md)|  | [optional]
  **limit** | **int**| Maximum number of returned items. | [optional]
  **offset** | **int**| How many items should be returned ahead. | [optional]
 
@@ -124,7 +124,7 @@ class EventsApi implements EventsApiInterface
     /**
      * Implementation of EventsApiInterface#eventsChannelsByNameExportPost
      */
-    public function eventsChannelsByNameExportPost($name, array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, $fileFormat = null, $compressionFormat = null, $fileName = null)
+    public function eventsChannelsByNameExportPost($name, array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, ExportFileFormats $fileFormat = null, CompressionFormat $compressionFormat = null, $fileName = null)
     {
         // Implement the operation ...
     }
@@ -141,8 +141,8 @@ Name | Type | Description  | Notes
  **eventTypes** | [**ElasticEmail\Model\EventType**](../Model/ElasticEmail\Model\EventType.md)| Types of Events to return | [optional]
  **from** | **\DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **\DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **fileFormat** | [**ExportFileFormats**](../Model/.md)| Format of the exported file | [optional]
- **compressionFormat** | [**CompressionFormat**](../Model/.md)| FileResponse compression format. None or Zip. | [optional]
+ **fileFormat** | [**ElasticEmail\Model\ExportFileFormats**](../Model/.md)| Format of the exported file | [optional]
+ **compressionFormat** | [**ElasticEmail\Model\CompressionFormat**](../Model/.md)| FileResponse compression format. None or Zip. | [optional]
  **fileName** | **string**| Name of your file including extension. | [optional]
 
 ### Return type
@@ -192,7 +192,7 @@ class EventsApi implements EventsApiInterface
     /**
      * Implementation of EventsApiInterface#eventsChannelsByNameGet
      */
-    public function eventsChannelsByNameGet($name, array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, $orderBy = null, $limit = null, $offset = null)
+    public function eventsChannelsByNameGet($name, array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, EventsOrderBy $orderBy = null, $limit = null, $offset = null)
     {
         // Implement the operation ...
     }
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
  **eventTypes** | [**ElasticEmail\Model\EventType**](../Model/ElasticEmail\Model\EventType.md)| Types of Events to return | [optional]
  **from** | **\DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **\DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](../Model/.md)|  | [optional]
+ **orderBy** | [**ElasticEmail\Model\EventsOrderBy**](../Model/.md)|  | [optional]
  **limit** | **int**| How many items to load. Maximum for this request is 1000 items | [optional]
  **offset** | **int**| How many items should be returned ahead. | [optional]
 
@@ -384,7 +384,7 @@ class EventsApi implements EventsApiInterface
     /**
      * Implementation of EventsApiInterface#eventsExportPost
      */
-    public function eventsExportPost(array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, $fileFormat = null, $compressionFormat = null, $fileName = null)
+    public function eventsExportPost(array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, ExportFileFormats $fileFormat = null, CompressionFormat $compressionFormat = null, $fileName = null)
     {
         // Implement the operation ...
     }
@@ -400,8 +400,8 @@ Name | Type | Description  | Notes
  **eventTypes** | [**ElasticEmail\Model\EventType**](../Model/ElasticEmail\Model\EventType.md)| Types of Events to return | [optional]
  **from** | **\DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **\DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **fileFormat** | [**ExportFileFormats**](../Model/.md)| Format of the exported file | [optional]
- **compressionFormat** | [**CompressionFormat**](../Model/.md)| FileResponse compression format. None or Zip. | [optional]
+ **fileFormat** | [**ElasticEmail\Model\ExportFileFormats**](../Model/.md)| Format of the exported file | [optional]
+ **compressionFormat** | [**ElasticEmail\Model\CompressionFormat**](../Model/.md)| FileResponse compression format. None or Zip. | [optional]
  **fileName** | **string**| Name of your file including extension. | [optional]
 
 ### Return type
@@ -451,7 +451,7 @@ class EventsApi implements EventsApiInterface
     /**
      * Implementation of EventsApiInterface#eventsGet
      */
-    public function eventsGet(array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, $orderBy = null, $limit = null, $offset = null)
+    public function eventsGet(array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, EventsOrderBy $orderBy = null, $limit = null, $offset = null)
     {
         // Implement the operation ...
     }
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
  **eventTypes** | [**ElasticEmail\Model\EventType**](../Model/ElasticEmail\Model\EventType.md)| Types of Events to return | [optional]
  **from** | **\DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **\DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](../Model/.md)|  | [optional]
+ **orderBy** | [**ElasticEmail\Model\EventsOrderBy**](../Model/.md)|  | [optional]
  **limit** | **int**| How many items to load. Maximum for this request is 1000 items | [optional]
  **offset** | **int**| How many items should be returned ahead. | [optional]
 

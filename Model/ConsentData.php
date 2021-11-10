@@ -62,12 +62,10 @@ class ConsentData
     protected $consentDate;
 
     /**
-     * Does the contant consent to have their tracking data stored.
-     *
-     * @var ConsentTracking|null
+     * @var ElasticEmail\Model\ConsentTracking|null
      * @SerializedName("ConsentTracking")
-     * @Assert\Type("ConsentTracking")
-     * @Type("ConsentTracking")
+     * @Assert\Type("ElasticEmail\Model\ConsentTracking")
+     * @Type("ElasticEmail\Model\ConsentTracking")
      */
     protected $consentTracking;
 
@@ -133,9 +131,9 @@ class ConsentData
     /**
      * Gets consentTracking.
      *
-     * @return ConsentTracking|null
+     * @return ElasticEmail\Model\ConsentTracking|null
      */
-    public function getConsentTracking()
+    public function getConsentTracking(): ?ConsentTracking
     {
         return $this->consentTracking;
     }
@@ -143,11 +141,11 @@ class ConsentData
     /**
      * Sets consentTracking.
      *
-     * @param ConsentTracking|null $consentTracking  Does the contant consent to have their tracking data stored.
+     * @param ElasticEmail\Model\ConsentTracking|null $consentTracking
      *
      * @return $this
      */
-    public function setConsentTracking($consentTracking = null)
+    public function setConsentTracking(ConsentTracking $consentTracking = null)
     {
         $this->consentTracking = $consentTracking;
 

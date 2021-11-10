@@ -42,12 +42,10 @@ use JMS\Serializer\Annotation\SerializedName;
 class EmailData 
 {
         /**
-     * Email details
-     *
-     * @var EmailView|null
+     * @var ElasticEmail\Model\EmailView|null
      * @SerializedName("Preview")
-     * @Assert\Type("EmailView")
-     * @Type("EmailView")
+     * @Assert\Type("ElasticEmail\Model\EmailView")
+     * @Type("ElasticEmail\Model\EmailView")
      */
     protected $preview;
 
@@ -64,12 +62,10 @@ class EmailData
     protected $attachments;
 
     /**
-     * Status of the given resource
-     *
-     * @var EmailStatus|null
+     * @var ElasticEmail\Model\EmailStatus|null
      * @SerializedName("Status")
-     * @Assert\Type("EmailStatus")
-     * @Type("EmailStatus")
+     * @Assert\Type("ElasticEmail\Model\EmailStatus")
+     * @Type("ElasticEmail\Model\EmailStatus")
      */
     protected $status;
 
@@ -87,9 +83,9 @@ class EmailData
     /**
      * Gets preview.
      *
-     * @return EmailView|null
+     * @return ElasticEmail\Model\EmailView|null
      */
-    public function getPreview()
+    public function getPreview(): ?EmailView
     {
         return $this->preview;
     }
@@ -97,11 +93,11 @@ class EmailData
     /**
      * Sets preview.
      *
-     * @param EmailView|null $preview  Email details
+     * @param ElasticEmail\Model\EmailView|null $preview
      *
      * @return $this
      */
-    public function setPreview($preview = null)
+    public function setPreview(EmailView $preview = null)
     {
         $this->preview = $preview;
 
@@ -135,9 +131,9 @@ class EmailData
     /**
      * Gets status.
      *
-     * @return EmailStatus|null
+     * @return ElasticEmail\Model\EmailStatus|null
      */
-    public function getStatus()
+    public function getStatus(): ?EmailStatus
     {
         return $this->status;
     }
@@ -145,11 +141,11 @@ class EmailData
     /**
      * Sets status.
      *
-     * @param EmailStatus|null $status  Status of the given resource
+     * @param ElasticEmail\Model\EmailStatus|null $status
      *
      * @return $this
      */
-    public function setStatus($status = null)
+    public function setStatus(EmailStatus $status = null)
     {
         $this->status = $status;
 

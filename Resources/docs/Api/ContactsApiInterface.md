@@ -435,7 +435,7 @@ class ContactsApi implements ContactsApiInterface
     /**
      * Implementation of ContactsApiInterface#contactsExportPost
      */
-    public function contactsExportPost($fileFormat = null, $rule = null, array $emails = null, $compressionFormat = null, $fileName = null)
+    public function contactsExportPost(ExportFileFormats $fileFormat = null, $rule = null, array $emails = null, CompressionFormat $compressionFormat = null, $fileName = null)
     {
         // Implement the operation ...
     }
@@ -448,10 +448,10 @@ class ContactsApi implements ContactsApiInterface
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileFormat** | [**ExportFileFormats**](../Model/.md)| Format of the exported file | [optional]
+ **fileFormat** | [**ElasticEmail\Model\ExportFileFormats**](../Model/.md)| Format of the exported file | [optional]
  **rule** | **string**| Query used for filtering. | [optional]
  **emails** | [**string**](../Model/string.md)| Comma delimited list of contact emails | [optional]
- **compressionFormat** | [**CompressionFormat**](../Model/.md)| FileResponse compression format. None or Zip. | [optional]
+ **compressionFormat** | [**ElasticEmail\Model\CompressionFormat**](../Model/.md)| FileResponse compression format. None or Zip. | [optional]
  **fileName** | **string**| Name of your file including extension. | [optional]
 
 ### Return type

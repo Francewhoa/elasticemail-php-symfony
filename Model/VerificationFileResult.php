@@ -64,22 +64,18 @@ class VerificationFileResult
     protected $filename;
 
     /**
-     * In what state does this verification result currently is
-     *
-     * @var VerificationStatus|null
+     * @var ElasticEmail\Model\VerificationStatus|null
      * @SerializedName("VerificationStatus")
-     * @Assert\Type("VerificationStatus")
-     * @Type("VerificationStatus")
+     * @Assert\Type("ElasticEmail\Model\VerificationStatus")
+     * @Type("ElasticEmail\Model\VerificationStatus")
      */
     protected $verificationStatus;
 
     /**
-     * How many emails were detected in the file for verification
-     *
-     * @var FileUploadResult|null
+     * @var ElasticEmail\Model\FileUploadResult|null
      * @SerializedName("FileUploadResult")
-     * @Assert\Type("FileUploadResult")
-     * @Type("FileUploadResult")
+     * @Assert\Type("ElasticEmail\Model\FileUploadResult")
+     * @Type("ElasticEmail\Model\FileUploadResult")
      */
     protected $fileUploadResult;
 
@@ -168,9 +164,9 @@ class VerificationFileResult
     /**
      * Gets verificationStatus.
      *
-     * @return VerificationStatus|null
+     * @return ElasticEmail\Model\VerificationStatus|null
      */
-    public function getVerificationStatus()
+    public function getVerificationStatus(): ?VerificationStatus
     {
         return $this->verificationStatus;
     }
@@ -178,11 +174,11 @@ class VerificationFileResult
     /**
      * Sets verificationStatus.
      *
-     * @param VerificationStatus|null $verificationStatus  In what state does this verification result currently is
+     * @param ElasticEmail\Model\VerificationStatus|null $verificationStatus
      *
      * @return $this
      */
-    public function setVerificationStatus($verificationStatus = null)
+    public function setVerificationStatus(VerificationStatus $verificationStatus = null)
     {
         $this->verificationStatus = $verificationStatus;
 
@@ -192,9 +188,9 @@ class VerificationFileResult
     /**
      * Gets fileUploadResult.
      *
-     * @return FileUploadResult|null
+     * @return ElasticEmail\Model\FileUploadResult|null
      */
-    public function getFileUploadResult()
+    public function getFileUploadResult(): ?FileUploadResult
     {
         return $this->fileUploadResult;
     }
@@ -202,11 +198,11 @@ class VerificationFileResult
     /**
      * Sets fileUploadResult.
      *
-     * @param FileUploadResult|null $fileUploadResult  How many emails were detected in the file for verification
+     * @param ElasticEmail\Model\FileUploadResult|null $fileUploadResult
      *
      * @return $this
      */
-    public function setFileUploadResult($fileUploadResult = null)
+    public function setFileUploadResult(FileUploadResult $fileUploadResult = null)
     {
         $this->fileUploadResult = $fileUploadResult;
 

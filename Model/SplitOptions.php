@@ -44,12 +44,10 @@ use JMS\Serializer\Annotation\SerializedName;
 class SplitOptions 
 {
         /**
-     * Type of results by which to determine the winner template (content)
-     *
-     * @var SplitOptimizationType|null
+     * @var ElasticEmail\Model\SplitOptimizationType|null
      * @SerializedName("OptimizeFor")
-     * @Assert\Type("SplitOptimizationType")
-     * @Type("SplitOptimizationType")
+     * @Assert\Type("ElasticEmail\Model\SplitOptimizationType")
+     * @Type("ElasticEmail\Model\SplitOptimizationType")
      */
     protected $optimizeFor;
 
@@ -76,9 +74,9 @@ class SplitOptions
     /**
      * Gets optimizeFor.
      *
-     * @return SplitOptimizationType|null
+     * @return ElasticEmail\Model\SplitOptimizationType|null
      */
-    public function getOptimizeFor()
+    public function getOptimizeFor(): ?SplitOptimizationType
     {
         return $this->optimizeFor;
     }
@@ -86,11 +84,11 @@ class SplitOptions
     /**
      * Sets optimizeFor.
      *
-     * @param SplitOptimizationType|null $optimizeFor  Type of results by which to determine the winner template (content)
+     * @param ElasticEmail\Model\SplitOptimizationType|null $optimizeFor
      *
      * @return $this
      */
-    public function setOptimizeFor($optimizeFor = null)
+    public function setOptimizeFor(SplitOptimizationType $optimizeFor = null)
     {
         $this->optimizeFor = $optimizeFor;
 

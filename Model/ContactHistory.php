@@ -42,12 +42,10 @@ use JMS\Serializer\Annotation\SerializedName;
 class ContactHistory 
 {
         /**
-     * Type of event occured on this Contact.
-     *
-     * @var ContactHistEventType|null
+     * @var ElasticEmail\Model\ContactHistEventType|null
      * @SerializedName("EventType")
-     * @Assert\Type("ContactHistEventType")
-     * @Type("ContactHistEventType")
+     * @Assert\Type("ElasticEmail\Model\ContactHistEventType")
+     * @Type("ElasticEmail\Model\ContactHistEventType")
      */
     protected $eventType;
 
@@ -129,9 +127,9 @@ class ContactHistory
     /**
      * Gets eventType.
      *
-     * @return ContactHistEventType|null
+     * @return ElasticEmail\Model\ContactHistEventType|null
      */
-    public function getEventType()
+    public function getEventType(): ?ContactHistEventType
     {
         return $this->eventType;
     }
@@ -139,11 +137,11 @@ class ContactHistory
     /**
      * Sets eventType.
      *
-     * @param ContactHistEventType|null $eventType  Type of event occured on this Contact.
+     * @param ElasticEmail\Model\ContactHistEventType|null $eventType
      *
      * @return $this
      */
-    public function setEventType($eventType = null)
+    public function setEventType(ContactHistEventType $eventType = null)
     {
         $this->eventType = $eventType;
 

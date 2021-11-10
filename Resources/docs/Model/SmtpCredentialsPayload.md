@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | Name of the Credential for ease of reference. It must be a valid email address. | 
-**expires** | [**\DateTime**](\DateTime.md) | Date this SmtpCredential expires. | [optional] 
+**expires** | **\DateTime** | Date this SmtpCredential expires. | [optional] 
 **restrictAccessToIPRange** | **string** | Which IPs can use this SmtpCredential | [optional] 
 **subaccount** | **string** | Email of the subaccount for which this SmtpCredential should be created | [optional] 
 

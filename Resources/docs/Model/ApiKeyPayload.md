@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | Name of the ApiKey for ease of reference. | 
 **accessLevel** | [**ElasticEmail\Model\AccessLevel**](AccessLevel.md) | Access level or permission to be assigned to this ApiKey. | 
-**expires** | [**\DateTime**](\DateTime.md) | Date this ApiKey expires. | [optional] 
+**expires** | **\DateTime** | Date this ApiKey expires. | [optional] 
 **restrictAccessToIPRange** | **string** | Which IPs can use this ApiKey | [optional] 
 **subaccount** | **string** | Email of the subaccount for which this ApiKey should be created | [optional] 
 

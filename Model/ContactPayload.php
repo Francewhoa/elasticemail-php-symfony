@@ -53,12 +53,10 @@ class ContactPayload
     protected $email;
 
     /**
-     * Status of the given resource
-     *
-     * @var ContactStatus|null
+     * @var ElasticEmail\Model\ContactStatus|null
      * @SerializedName("Status")
-     * @Assert\Type("ContactStatus")
-     * @Type("ContactStatus")
+     * @Assert\Type("ElasticEmail\Model\ContactStatus")
+     * @Type("ElasticEmail\Model\ContactStatus")
      */
     protected $status;
 
@@ -143,9 +141,9 @@ class ContactPayload
     /**
      * Gets status.
      *
-     * @return ContactStatus|null
+     * @return ElasticEmail\Model\ContactStatus|null
      */
-    public function getStatus()
+    public function getStatus(): ?ContactStatus
     {
         return $this->status;
     }
@@ -153,11 +151,11 @@ class ContactPayload
     /**
      * Sets status.
      *
-     * @param ContactStatus|null $status  Status of the given resource
+     * @param ElasticEmail\Model\ContactStatus|null $status
      *
      * @return $this
      */
-    public function setStatus($status = null)
+    public function setStatus(ContactStatus $status = null)
     {
         $this->status = $status;
 

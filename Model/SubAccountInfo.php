@@ -64,12 +64,10 @@ class SubAccountInfo
     protected $email;
 
     /**
-     * SubAccount settings
-     *
-     * @var SubaccountSettingsInfo|null
+     * @var ElasticEmail\Model\SubaccountSettingsInfo|null
      * @SerializedName("Settings")
-     * @Assert\Type("SubaccountSettingsInfo")
-     * @Type("SubaccountSettingsInfo")
+     * @Assert\Type("ElasticEmail\Model\SubaccountSettingsInfo")
+     * @Type("ElasticEmail\Model\SubaccountSettingsInfo")
      */
     protected $settings;
 
@@ -114,12 +112,10 @@ class SubAccountInfo
     protected $reputation;
 
     /**
-     * Account&#39;s current status.
-     *
-     * @var AccountStatusEnum|null
+     * @var ElasticEmail\Model\AccountStatusEnum|null
      * @SerializedName("Status")
-     * @Assert\Type("AccountStatusEnum")
-     * @Type("AccountStatusEnum")
+     * @Assert\Type("ElasticEmail\Model\AccountStatusEnum")
+     * @Type("ElasticEmail\Model\AccountStatusEnum")
      */
     protected $status;
 
@@ -201,9 +197,9 @@ class SubAccountInfo
     /**
      * Gets settings.
      *
-     * @return SubaccountSettingsInfo|null
+     * @return ElasticEmail\Model\SubaccountSettingsInfo|null
      */
-    public function getSettings()
+    public function getSettings(): ?SubaccountSettingsInfo
     {
         return $this->settings;
     }
@@ -211,11 +207,11 @@ class SubAccountInfo
     /**
      * Sets settings.
      *
-     * @param SubaccountSettingsInfo|null $settings  SubAccount settings
+     * @param ElasticEmail\Model\SubaccountSettingsInfo|null $settings
      *
      * @return $this
      */
-    public function setSettings($settings = null)
+    public function setSettings(SubaccountSettingsInfo $settings = null)
     {
         $this->settings = $settings;
 
@@ -321,9 +317,9 @@ class SubAccountInfo
     /**
      * Gets status.
      *
-     * @return AccountStatusEnum|null
+     * @return ElasticEmail\Model\AccountStatusEnum|null
      */
-    public function getStatus()
+    public function getStatus(): ?AccountStatusEnum
     {
         return $this->status;
     }
@@ -331,11 +327,11 @@ class SubAccountInfo
     /**
      * Sets status.
      *
-     * @param AccountStatusEnum|null $status  Account's current status.
+     * @param ElasticEmail\Model\AccountStatusEnum|null $status
      *
      * @return $this
      */
-    public function setStatus($status = null)
+    public function setStatus(AccountStatusEnum $status = null)
     {
         $this->status = $status;
 

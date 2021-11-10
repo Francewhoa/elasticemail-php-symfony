@@ -77,12 +77,10 @@ class TemplatePayload
     protected $body;
 
     /**
-     * Visibility of a template
-     *
-     * @var TemplateScope|null
+     * @var ElasticEmail\Model\TemplateScope|null
      * @SerializedName("TemplateScope")
-     * @Assert\Type("TemplateScope")
-     * @Type("TemplateScope")
+     * @Assert\Type("ElasticEmail\Model\TemplateScope")
+     * @Type("ElasticEmail\Model\TemplateScope")
      */
     protected $templateScope;
 
@@ -173,9 +171,9 @@ class TemplatePayload
     /**
      * Gets templateScope.
      *
-     * @return TemplateScope|null
+     * @return ElasticEmail\Model\TemplateScope|null
      */
-    public function getTemplateScope()
+    public function getTemplateScope(): ?TemplateScope
     {
         return $this->templateScope;
     }
@@ -183,11 +181,11 @@ class TemplatePayload
     /**
      * Sets templateScope.
      *
-     * @param TemplateScope|null $templateScope  Visibility of a template
+     * @param ElasticEmail\Model\TemplateScope|null $templateScope
      *
      * @return $this
      */
-    public function setTemplateScope($templateScope = null)
+    public function setTemplateScope(TemplateScope $templateScope = null)
     {
         $this->templateScope = $templateScope;
 

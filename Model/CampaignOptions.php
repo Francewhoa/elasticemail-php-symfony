@@ -44,12 +44,10 @@ use JMS\Serializer\Annotation\SerializedName;
 class CampaignOptions 
 {
         /**
-     * How to order email delivery - by recipients&#39; engagement score or by the time they open the most of the emails that were sent to them
-     *
-     * @var DeliveryOptimizationType|null
+     * @var ElasticEmail\Model\DeliveryOptimizationType|null
      * @SerializedName("DeliveryOptimization")
-     * @Assert\Type("DeliveryOptimizationType")
-     * @Type("DeliveryOptimizationType")
+     * @Assert\Type("ElasticEmail\Model\DeliveryOptimizationType")
+     * @Type("ElasticEmail\Model\DeliveryOptimizationType")
      */
     protected $deliveryOptimization;
 
@@ -84,12 +82,10 @@ class CampaignOptions
     protected $scheduleFor;
 
     /**
-     * Optional options for A/X split campaigns. Will be ignored if only one template content was provided
-     *
-     * @var SplitOptions|null
+     * @var ElasticEmail\Model\SplitOptions|null
      * @SerializedName("SplitOptions")
-     * @Assert\Type("SplitOptions")
-     * @Type("SplitOptions")
+     * @Assert\Type("ElasticEmail\Model\SplitOptions")
+     * @Type("ElasticEmail\Model\SplitOptions")
      */
     protected $splitOptions;
 
@@ -109,9 +105,9 @@ class CampaignOptions
     /**
      * Gets deliveryOptimization.
      *
-     * @return DeliveryOptimizationType|null
+     * @return ElasticEmail\Model\DeliveryOptimizationType|null
      */
-    public function getDeliveryOptimization()
+    public function getDeliveryOptimization(): ?DeliveryOptimizationType
     {
         return $this->deliveryOptimization;
     }
@@ -119,11 +115,11 @@ class CampaignOptions
     /**
      * Sets deliveryOptimization.
      *
-     * @param DeliveryOptimizationType|null $deliveryOptimization  How to order email delivery - by recipients' engagement score or by the time they open the most of the emails that were sent to them
+     * @param ElasticEmail\Model\DeliveryOptimizationType|null $deliveryOptimization
      *
      * @return $this
      */
-    public function setDeliveryOptimization($deliveryOptimization = null)
+    public function setDeliveryOptimization(DeliveryOptimizationType $deliveryOptimization = null)
     {
         $this->deliveryOptimization = $deliveryOptimization;
 
@@ -205,9 +201,9 @@ class CampaignOptions
     /**
      * Gets splitOptions.
      *
-     * @return SplitOptions|null
+     * @return ElasticEmail\Model\SplitOptions|null
      */
-    public function getSplitOptions()
+    public function getSplitOptions(): ?SplitOptions
     {
         return $this->splitOptions;
     }
@@ -215,11 +211,11 @@ class CampaignOptions
     /**
      * Sets splitOptions.
      *
-     * @param SplitOptions|null $splitOptions  Optional options for A/X split campaigns. Will be ignored if only one template content was provided
+     * @param ElasticEmail\Model\SplitOptions|null $splitOptions
      *
      * @return $this
      */
-    public function setSplitOptions($splitOptions = null)
+    public function setSplitOptions(SplitOptions $splitOptions = null)
     {
         $this->splitOptions = $splitOptions;
 

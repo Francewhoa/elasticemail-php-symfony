@@ -65,34 +65,28 @@ class Campaign
     protected $name;
 
     /**
-     * Campaign status
-     *
-     * @var CampaignStatus|null
+     * @var ElasticEmail\Model\CampaignStatus|null
      * @SerializedName("Status")
-     * @Assert\Type("CampaignStatus")
-     * @Type("CampaignStatus")
+     * @Assert\Type("ElasticEmail\Model\CampaignStatus")
+     * @Type("ElasticEmail\Model\CampaignStatus")
      */
     protected $status;
 
     /**
-     * Recipients this campaign should be sent to
-     *
-     * @var CampaignRecipient
+     * @var ElasticEmail\Model\CampaignRecipient
      * @SerializedName("Recipients")
      * @Assert\NotNull()
      * @Assert\Valid()
-     * @Assert\Type("CampaignRecipient")
-     * @Type("CampaignRecipient")
+     * @Assert\Type("ElasticEmail\Model\CampaignRecipient")
+     * @Type("ElasticEmail\Model\CampaignRecipient")
      */
     protected $recipients;
 
     /**
-     * Campaign sending options
-     *
-     * @var CampaignOptions|null
+     * @var ElasticEmail\Model\CampaignOptions|null
      * @SerializedName("Options")
-     * @Assert\Type("CampaignOptions")
-     * @Type("CampaignOptions")
+     * @Assert\Type("ElasticEmail\Model\CampaignOptions")
+     * @Type("ElasticEmail\Model\CampaignOptions")
      */
     protected $options;
 
@@ -160,9 +154,9 @@ class Campaign
     /**
      * Gets status.
      *
-     * @return CampaignStatus|null
+     * @return ElasticEmail\Model\CampaignStatus|null
      */
-    public function getStatus()
+    public function getStatus(): ?CampaignStatus
     {
         return $this->status;
     }
@@ -170,11 +164,11 @@ class Campaign
     /**
      * Sets status.
      *
-     * @param CampaignStatus|null $status  Campaign status
+     * @param ElasticEmail\Model\CampaignStatus|null $status
      *
      * @return $this
      */
-    public function setStatus($status = null)
+    public function setStatus(CampaignStatus $status = null)
     {
         $this->status = $status;
 
@@ -184,9 +178,9 @@ class Campaign
     /**
      * Gets recipients.
      *
-     * @return CampaignRecipient
+     * @return ElasticEmail\Model\CampaignRecipient
      */
-    public function getRecipients()
+    public function getRecipients(): CampaignRecipient
     {
         return $this->recipients;
     }
@@ -194,11 +188,11 @@ class Campaign
     /**
      * Sets recipients.
      *
-     * @param CampaignRecipient $recipients  Recipients this campaign should be sent to
+     * @param ElasticEmail\Model\CampaignRecipient $recipients
      *
      * @return $this
      */
-    public function setRecipients($recipients)
+    public function setRecipients(CampaignRecipient $recipients)
     {
         $this->recipients = $recipients;
 
@@ -208,9 +202,9 @@ class Campaign
     /**
      * Gets options.
      *
-     * @return CampaignOptions|null
+     * @return ElasticEmail\Model\CampaignOptions|null
      */
-    public function getOptions()
+    public function getOptions(): ?CampaignOptions
     {
         return $this->options;
     }
@@ -218,11 +212,11 @@ class Campaign
     /**
      * Sets options.
      *
-     * @param CampaignOptions|null $options  Campaign sending options
+     * @param ElasticEmail\Model\CampaignOptions|null $options
      *
      * @return $this
      */
-    public function setOptions($options = null)
+    public function setOptions(CampaignOptions $options = null)
     {
         $this->options = $options;
 

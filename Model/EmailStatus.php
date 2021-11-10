@@ -74,12 +74,10 @@ class EmailStatus
     protected $date;
 
     /**
-     * Value of email&#39;s status
-     *
-     * @var LogJobStatus|null
+     * @var ElasticEmail\Model\LogJobStatus|null
      * @SerializedName("Status")
-     * @Assert\Type("LogJobStatus")
-     * @Type("LogJobStatus")
+     * @Assert\Type("ElasticEmail\Model\LogJobStatus")
+     * @Type("ElasticEmail\Model\LogJobStatus")
      */
     protected $status;
 
@@ -258,9 +256,9 @@ class EmailStatus
     /**
      * Gets status.
      *
-     * @return LogJobStatus|null
+     * @return ElasticEmail\Model\LogJobStatus|null
      */
-    public function getStatus()
+    public function getStatus(): ?LogJobStatus
     {
         return $this->status;
     }
@@ -268,11 +266,11 @@ class EmailStatus
     /**
      * Sets status.
      *
-     * @param LogJobStatus|null $status  Value of email's status
+     * @param ElasticEmail\Model\LogJobStatus|null $status
      *
      * @return $this
      */
-    public function setStatus($status = null)
+    public function setStatus(LogJobStatus $status = null)
     {
         $this->status = $status;
 

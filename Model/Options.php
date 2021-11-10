@@ -74,12 +74,10 @@ class Options
     protected $channelName;
 
     /**
-     * 0 for None, 1 for Raw7Bit, 2 for Raw8Bit, 3 for QuotedPrintable, 4 for Base64 (Default), 5 for Uue note that you can also provide the text version such as \&quot;Raw7Bit\&quot; for value 1. NOTE: Base64 or QuotedPrintable is recommended if you are validating your domain(s) with DKIM.
-     *
-     * @var EncodingType|null
+     * @var ElasticEmail\Model\EncodingType|null
      * @SerializedName("Encoding")
-     * @Assert\Type("EncodingType")
-     * @Type("EncodingType")
+     * @Assert\Type("ElasticEmail\Model\EncodingType")
+     * @Type("ElasticEmail\Model\EncodingType")
      */
     protected $encoding;
 
@@ -192,9 +190,9 @@ class Options
     /**
      * Gets encoding.
      *
-     * @return EncodingType|null
+     * @return ElasticEmail\Model\EncodingType|null
      */
-    public function getEncoding()
+    public function getEncoding(): ?EncodingType
     {
         return $this->encoding;
     }
@@ -202,11 +200,11 @@ class Options
     /**
      * Sets encoding.
      *
-     * @param EncodingType|null $encoding  0 for None, 1 for Raw7Bit, 2 for Raw8Bit, 3 for QuotedPrintable, 4 for Base64 (Default), 5 for Uue note that you can also provide the text version such as \"Raw7Bit\" for value 1. NOTE: Base64 or QuotedPrintable is recommended if you are validating your domain(s) with DKIM.
+     * @param ElasticEmail\Model\EncodingType|null $encoding
      *
      * @return $this
      */
-    public function setEncoding($encoding = null)
+    public function setEncoding(EncodingType $encoding = null)
     {
         $this->encoding = $encoding;
 

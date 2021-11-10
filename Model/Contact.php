@@ -54,12 +54,10 @@ class Contact
     protected $email;
 
     /**
-     * Status of the given resource
-     *
-     * @var ContactStatus|null
+     * @var ElasticEmail\Model\ContactStatus|null
      * @SerializedName("Status")
-     * @Assert\Type("ContactStatus")
-     * @Type("ContactStatus")
+     * @Assert\Type("ElasticEmail\Model\ContactStatus")
+     * @Type("ElasticEmail\Model\ContactStatus")
      */
     protected $status;
 
@@ -104,12 +102,10 @@ class Contact
     protected $consent;
 
     /**
-     * From where was this contact added
-     *
-     * @var ContactSource|null
+     * @var ElasticEmail\Model\ContactSource|null
      * @SerializedName("Source")
-     * @Assert\Type("ContactSource")
-     * @Type("ContactSource")
+     * @Assert\Type("ElasticEmail\Model\ContactSource")
+     * @Type("ElasticEmail\Model\ContactSource")
      */
     protected $source;
 
@@ -144,12 +140,10 @@ class Contact
     protected $statusChangeDate;
 
     /**
-     * Contact&#39;s email statistics and activity
-     *
-     * @var ContactActivity|null
+     * @var ElasticEmail\Model\ContactActivity|null
      * @SerializedName("Activity")
-     * @Assert\Type("ContactActivity")
-     * @Type("ContactActivity")
+     * @Assert\Type("ElasticEmail\Model\ContactActivity")
+     * @Type("ElasticEmail\Model\ContactActivity")
      */
     protected $activity;
 
@@ -199,9 +193,9 @@ class Contact
     /**
      * Gets status.
      *
-     * @return ContactStatus|null
+     * @return ElasticEmail\Model\ContactStatus|null
      */
-    public function getStatus()
+    public function getStatus(): ?ContactStatus
     {
         return $this->status;
     }
@@ -209,11 +203,11 @@ class Contact
     /**
      * Sets status.
      *
-     * @param ContactStatus|null $status  Status of the given resource
+     * @param ElasticEmail\Model\ContactStatus|null $status
      *
      * @return $this
      */
-    public function setStatus($status = null)
+    public function setStatus(ContactStatus $status = null)
     {
         $this->status = $status;
 
@@ -319,9 +313,9 @@ class Contact
     /**
      * Gets source.
      *
-     * @return ContactSource|null
+     * @return ElasticEmail\Model\ContactSource|null
      */
-    public function getSource()
+    public function getSource(): ?ContactSource
     {
         return $this->source;
     }
@@ -329,11 +323,11 @@ class Contact
     /**
      * Sets source.
      *
-     * @param ContactSource|null $source  From where was this contact added
+     * @param ElasticEmail\Model\ContactSource|null $source
      *
      * @return $this
      */
-    public function setSource($source = null)
+    public function setSource(ContactSource $source = null)
     {
         $this->source = $source;
 
@@ -415,9 +409,9 @@ class Contact
     /**
      * Gets activity.
      *
-     * @return ContactActivity|null
+     * @return ElasticEmail\Model\ContactActivity|null
      */
-    public function getActivity()
+    public function getActivity(): ?ContactActivity
     {
         return $this->activity;
     }
@@ -425,11 +419,11 @@ class Contact
     /**
      * Sets activity.
      *
-     * @param ContactActivity|null $activity  Contact's email statistics and activity
+     * @param ElasticEmail\Model\ContactActivity|null $activity
      *
      * @return $this
      */
-    public function setActivity($activity = null)
+    public function setActivity(ContactActivity $activity = null)
     {
         $this->activity = $activity;
 

@@ -76,7 +76,7 @@ interface TemplatesApiInterface
      * @param  \int $responseCode     The HTTP response code to return
      * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return \Template
+     * @return \ElasticEmail\Model\Template
      */
     public function templatesByNameGet($name, &$responseCode, array &$responseHeaders);
 
@@ -119,7 +119,7 @@ interface TemplatesApiInterface
      * @param  \int $responseCode     The HTTP response code to return
      * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
-     * @return \Template
+     * @return \ElasticEmail\Model\Template
      */
     public function templatesPost(TemplatePayload $templatePayload, &$responseCode, array &$responseHeaders);
 }

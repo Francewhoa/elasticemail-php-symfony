@@ -54,12 +54,10 @@ class NewSmtpCredentials
     protected $token;
 
     /**
-     * Access level of this Smtp Credential.
-     *
-     * @var AccessLevel|null
+     * @var ElasticEmail\Model\AccessLevel|null
      * @SerializedName("AccessLevel")
-     * @Assert\Type("AccessLevel")
-     * @Type("AccessLevel")
+     * @Assert\Type("ElasticEmail\Model\AccessLevel")
+     * @Type("ElasticEmail\Model\AccessLevel")
      */
     protected $accessLevel;
 
@@ -157,9 +155,9 @@ class NewSmtpCredentials
     /**
      * Gets accessLevel.
      *
-     * @return AccessLevel|null
+     * @return ElasticEmail\Model\AccessLevel|null
      */
-    public function getAccessLevel()
+    public function getAccessLevel(): ?AccessLevel
     {
         return $this->accessLevel;
     }
@@ -167,11 +165,11 @@ class NewSmtpCredentials
     /**
      * Sets accessLevel.
      *
-     * @param AccessLevel|null $accessLevel  Access level of this Smtp Credential.
+     * @param ElasticEmail\Model\AccessLevel|null $accessLevel
      *
      * @return $this
      */
-    public function setAccessLevel($accessLevel = null)
+    public function setAccessLevel(AccessLevel $accessLevel = null)
     {
         $this->accessLevel = $accessLevel;
 

@@ -92,7 +92,7 @@ class InboundRouteController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 204;
             $responseHeaders = [];
@@ -173,7 +173,7 @@ class InboundRouteController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -273,7 +273,7 @@ class InboundRouteController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -341,7 +341,7 @@ class InboundRouteController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -435,7 +435,7 @@ class InboundRouteController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -527,7 +527,7 @@ class InboundRouteController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];

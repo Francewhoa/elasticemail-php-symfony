@@ -44,12 +44,10 @@ use JMS\Serializer\Annotation\SerializedName;
 class SubaccountSettingsInfo 
 {
         /**
-     * Settings related to sending emails
-     *
-     * @var SubaccountEmailSettings|null
+     * @var ElasticEmail\Model\SubaccountEmailSettings|null
      * @SerializedName("Email")
-     * @Assert\Type("SubaccountEmailSettings")
-     * @Type("SubaccountEmailSettings")
+     * @Assert\Type("ElasticEmail\Model\SubaccountEmailSettings")
+     * @Type("ElasticEmail\Model\SubaccountEmailSettings")
      */
     protected $email;
 
@@ -65,9 +63,9 @@ class SubaccountSettingsInfo
     /**
      * Gets email.
      *
-     * @return SubaccountEmailSettings|null
+     * @return ElasticEmail\Model\SubaccountEmailSettings|null
      */
-    public function getEmail()
+    public function getEmail(): ?SubaccountEmailSettings
     {
         return $this->email;
     }
@@ -75,11 +73,11 @@ class SubaccountSettingsInfo
     /**
      * Sets email.
      *
-     * @param SubaccountEmailSettings|null $email  Settings related to sending emails
+     * @param ElasticEmail\Model\SubaccountEmailSettings|null $email
      *
      * @return $this
      */
-    public function setEmail($email = null)
+    public function setEmail(SubaccountEmailSettings $email = null)
     {
         $this->email = $email;
 

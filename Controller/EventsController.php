@@ -93,7 +93,7 @@ class EventsController extends Controller
             $transactionid = $this->deserialize($transactionid, 'string', 'string');
             $from = $this->deserialize($from, '\DateTime', 'string');
             $to = $this->deserialize($to, '\DateTime', 'string');
-            $orderBy = $this->deserialize($orderBy, 'EventsOrderBy', 'string');
+            $orderBy = $this->deserialize($orderBy, 'ElasticEmail\Model\EventsOrderBy', 'string');
             $limit = $this->deserialize($limit, 'int', 'string');
             $offset = $this->deserialize($offset, 'int', 'string');
         } catch (SerializerRuntimeException $exception) {
@@ -121,7 +121,7 @@ class EventsController extends Controller
             return $response;
         }
         $asserts = [];
-        $asserts[] = new Assert\Type("EventsOrderBy");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\EventsOrderBy");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($orderBy, $asserts);
         if ($response instanceof Response) {
@@ -146,7 +146,7 @@ class EventsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -218,8 +218,8 @@ class EventsController extends Controller
             $eventTypes = $this->deserialize($eventTypes, 'array<multi,ElasticEmail\Model\EventType>', 'string');
             $from = $this->deserialize($from, '\DateTime', 'string');
             $to = $this->deserialize($to, '\DateTime', 'string');
-            $fileFormat = $this->deserialize($fileFormat, 'ExportFileFormats', 'string');
-            $compressionFormat = $this->deserialize($compressionFormat, 'CompressionFormat', 'string');
+            $fileFormat = $this->deserialize($fileFormat, 'ElasticEmail\Model\ExportFileFormats', 'string');
+            $compressionFormat = $this->deserialize($compressionFormat, 'ElasticEmail\Model\CompressionFormat', 'string');
             $fileName = $this->deserialize($fileName, 'string', 'string');
         } catch (SerializerRuntimeException $exception) {
             return $this->createBadRequestResponse($exception->getMessage());
@@ -255,14 +255,14 @@ class EventsController extends Controller
             return $response;
         }
         $asserts = [];
-        $asserts[] = new Assert\Type("ExportFileFormats");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\ExportFileFormats");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($fileFormat, $asserts);
         if ($response instanceof Response) {
             return $response;
         }
         $asserts = [];
-        $asserts[] = new Assert\Type("CompressionFormat");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\CompressionFormat");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($compressionFormat, $asserts);
         if ($response instanceof Response) {
@@ -281,7 +281,7 @@ class EventsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -353,7 +353,7 @@ class EventsController extends Controller
             $eventTypes = $this->deserialize($eventTypes, 'array<multi,ElasticEmail\Model\EventType>', 'string');
             $from = $this->deserialize($from, '\DateTime', 'string');
             $to = $this->deserialize($to, '\DateTime', 'string');
-            $orderBy = $this->deserialize($orderBy, 'EventsOrderBy', 'string');
+            $orderBy = $this->deserialize($orderBy, 'ElasticEmail\Model\EventsOrderBy', 'string');
             $limit = $this->deserialize($limit, 'int', 'string');
             $offset = $this->deserialize($offset, 'int', 'string');
         } catch (SerializerRuntimeException $exception) {
@@ -390,7 +390,7 @@ class EventsController extends Controller
             return $response;
         }
         $asserts = [];
-        $asserts[] = new Assert\Type("EventsOrderBy");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\EventsOrderBy");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($orderBy, $asserts);
         if ($response instanceof Response) {
@@ -415,7 +415,7 @@ class EventsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -497,7 +497,7 @@ class EventsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -579,7 +579,7 @@ class EventsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -650,8 +650,8 @@ class EventsController extends Controller
             $eventTypes = $this->deserialize($eventTypes, 'array<multi,ElasticEmail\Model\EventType>', 'string');
             $from = $this->deserialize($from, '\DateTime', 'string');
             $to = $this->deserialize($to, '\DateTime', 'string');
-            $fileFormat = $this->deserialize($fileFormat, 'ExportFileFormats', 'string');
-            $compressionFormat = $this->deserialize($compressionFormat, 'CompressionFormat', 'string');
+            $fileFormat = $this->deserialize($fileFormat, 'ElasticEmail\Model\ExportFileFormats', 'string');
+            $compressionFormat = $this->deserialize($compressionFormat, 'ElasticEmail\Model\CompressionFormat', 'string');
             $fileName = $this->deserialize($fileName, 'string', 'string');
         } catch (SerializerRuntimeException $exception) {
             return $this->createBadRequestResponse($exception->getMessage());
@@ -680,14 +680,14 @@ class EventsController extends Controller
             return $response;
         }
         $asserts = [];
-        $asserts[] = new Assert\Type("ExportFileFormats");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\ExportFileFormats");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($fileFormat, $asserts);
         if ($response instanceof Response) {
             return $response;
         }
         $asserts = [];
-        $asserts[] = new Assert\Type("CompressionFormat");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\CompressionFormat");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($compressionFormat, $asserts);
         if ($response instanceof Response) {
@@ -706,7 +706,7 @@ class EventsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -777,7 +777,7 @@ class EventsController extends Controller
             $eventTypes = $this->deserialize($eventTypes, 'array<multi,ElasticEmail\Model\EventType>', 'string');
             $from = $this->deserialize($from, '\DateTime', 'string');
             $to = $this->deserialize($to, '\DateTime', 'string');
-            $orderBy = $this->deserialize($orderBy, 'EventsOrderBy', 'string');
+            $orderBy = $this->deserialize($orderBy, 'ElasticEmail\Model\EventsOrderBy', 'string');
             $limit = $this->deserialize($limit, 'int', 'string');
             $offset = $this->deserialize($offset, 'int', 'string');
         } catch (SerializerRuntimeException $exception) {
@@ -807,7 +807,7 @@ class EventsController extends Controller
             return $response;
         }
         $asserts = [];
-        $asserts[] = new Assert\Type("EventsOrderBy");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\EventsOrderBy");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($orderBy, $asserts);
         if ($response instanceof Response) {
@@ -832,7 +832,7 @@ class EventsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];

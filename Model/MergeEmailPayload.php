@@ -42,34 +42,28 @@ use JMS\Serializer\Annotation\SerializedName;
 class MergeEmailPayload 
 {
         /**
-     * CSV file containing recipients with optional merge fields
-     *
-     * @var MessageAttachment
+     * @var ElasticEmail\Model\MessageAttachment
      * @SerializedName("MergeFile")
      * @Assert\NotNull()
      * @Assert\Valid()
-     * @Assert\Type("MessageAttachment")
-     * @Type("MessageAttachment")
+     * @Assert\Type("ElasticEmail\Model\MessageAttachment")
+     * @Type("ElasticEmail\Model\MessageAttachment")
      */
     protected $mergeFile;
 
     /**
-     * Proper e-mail content
-     *
-     * @var EmailContent|null
+     * @var ElasticEmail\Model\EmailContent|null
      * @SerializedName("Content")
-     * @Assert\Type("EmailContent")
-     * @Type("EmailContent")
+     * @Assert\Type("ElasticEmail\Model\EmailContent")
+     * @Type("ElasticEmail\Model\EmailContent")
      */
     protected $content;
 
     /**
-     * E-mail configuration
-     *
-     * @var Options|null
+     * @var ElasticEmail\Model\Options|null
      * @SerializedName("Options")
-     * @Assert\Type("Options")
-     * @Type("Options")
+     * @Assert\Type("ElasticEmail\Model\Options")
+     * @Type("ElasticEmail\Model\Options")
      */
     protected $options;
 
@@ -87,9 +81,9 @@ class MergeEmailPayload
     /**
      * Gets mergeFile.
      *
-     * @return MessageAttachment
+     * @return ElasticEmail\Model\MessageAttachment
      */
-    public function getMergeFile()
+    public function getMergeFile(): MessageAttachment
     {
         return $this->mergeFile;
     }
@@ -97,11 +91,11 @@ class MergeEmailPayload
     /**
      * Sets mergeFile.
      *
-     * @param MessageAttachment $mergeFile  CSV file containing recipients with optional merge fields
+     * @param ElasticEmail\Model\MessageAttachment $mergeFile
      *
      * @return $this
      */
-    public function setMergeFile($mergeFile)
+    public function setMergeFile(MessageAttachment $mergeFile)
     {
         $this->mergeFile = $mergeFile;
 
@@ -111,9 +105,9 @@ class MergeEmailPayload
     /**
      * Gets content.
      *
-     * @return EmailContent|null
+     * @return ElasticEmail\Model\EmailContent|null
      */
-    public function getContent()
+    public function getContent(): ?EmailContent
     {
         return $this->content;
     }
@@ -121,11 +115,11 @@ class MergeEmailPayload
     /**
      * Sets content.
      *
-     * @param EmailContent|null $content  Proper e-mail content
+     * @param ElasticEmail\Model\EmailContent|null $content
      *
      * @return $this
      */
-    public function setContent($content = null)
+    public function setContent(EmailContent $content = null)
     {
         $this->content = $content;
 
@@ -135,9 +129,9 @@ class MergeEmailPayload
     /**
      * Gets options.
      *
-     * @return Options|null
+     * @return ElasticEmail\Model\Options|null
      */
-    public function getOptions()
+    public function getOptions(): ?Options
     {
         return $this->options;
     }
@@ -145,11 +139,11 @@ class MergeEmailPayload
     /**
      * Sets options.
      *
-     * @param Options|null $options  E-mail configuration
+     * @param ElasticEmail\Model\Options|null $options
      *
      * @return $this
      */
-    public function setOptions($options = null)
+    public function setOptions(Options $options = null)
     {
         $this->options = $options;
 

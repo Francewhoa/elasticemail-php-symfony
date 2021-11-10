@@ -36,7 +36,7 @@ use JMS\Serializer\Annotation\SerializedName;
 /**
  * Class representing the EmailRecipient model.
  *
- * List of recipients (visible to others)
+ * List of recipients
  *
  * @package ElasticEmail\Model
  * @author  OpenAPI Generator team

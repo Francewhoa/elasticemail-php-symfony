@@ -44,34 +44,28 @@ use JMS\Serializer\Annotation\SerializedName;
 class EmailTransactionalMessageData 
 {
         /**
-     * List of transactional recipients
-     *
-     * @var TransactionalRecipient
+     * @var ElasticEmail\Model\TransactionalRecipient
      * @SerializedName("Recipients")
      * @Assert\NotNull()
      * @Assert\Valid()
-     * @Assert\Type("TransactionalRecipient")
-     * @Type("TransactionalRecipient")
+     * @Assert\Type("ElasticEmail\Model\TransactionalRecipient")
+     * @Type("ElasticEmail\Model\TransactionalRecipient")
      */
     protected $recipients;
 
     /**
-     * Proper e-mail content
-     *
-     * @var EmailContent|null
+     * @var ElasticEmail\Model\EmailContent|null
      * @SerializedName("Content")
-     * @Assert\Type("EmailContent")
-     * @Type("EmailContent")
+     * @Assert\Type("ElasticEmail\Model\EmailContent")
+     * @Type("ElasticEmail\Model\EmailContent")
      */
     protected $content;
 
     /**
-     * E-mail configuration
-     *
-     * @var Options|null
+     * @var ElasticEmail\Model\Options|null
      * @SerializedName("Options")
-     * @Assert\Type("Options")
-     * @Type("Options")
+     * @Assert\Type("ElasticEmail\Model\Options")
+     * @Type("ElasticEmail\Model\Options")
      */
     protected $options;
 
@@ -89,9 +83,9 @@ class EmailTransactionalMessageData
     /**
      * Gets recipients.
      *
-     * @return TransactionalRecipient
+     * @return ElasticEmail\Model\TransactionalRecipient
      */
-    public function getRecipients()
+    public function getRecipients(): TransactionalRecipient
     {
         return $this->recipients;
     }
@@ -99,11 +93,11 @@ class EmailTransactionalMessageData
     /**
      * Sets recipients.
      *
-     * @param TransactionalRecipient $recipients  List of transactional recipients
+     * @param ElasticEmail\Model\TransactionalRecipient $recipients
      *
      * @return $this
      */
-    public function setRecipients($recipients)
+    public function setRecipients(TransactionalRecipient $recipients)
     {
         $this->recipients = $recipients;
 
@@ -113,9 +107,9 @@ class EmailTransactionalMessageData
     /**
      * Gets content.
      *
-     * @return EmailContent|null
+     * @return ElasticEmail\Model\EmailContent|null
      */
-    public function getContent()
+    public function getContent(): ?EmailContent
     {
         return $this->content;
     }
@@ -123,11 +117,11 @@ class EmailTransactionalMessageData
     /**
      * Sets content.
      *
-     * @param EmailContent|null $content  Proper e-mail content
+     * @param ElasticEmail\Model\EmailContent|null $content
      *
      * @return $this
      */
-    public function setContent($content = null)
+    public function setContent(EmailContent $content = null)
     {
         $this->content = $content;
 
@@ -137,9 +131,9 @@ class EmailTransactionalMessageData
     /**
      * Gets options.
      *
-     * @return Options|null
+     * @return ElasticEmail\Model\Options|null
      */
-    public function getOptions()
+    public function getOptions(): ?Options
     {
         return $this->options;
     }
@@ -147,11 +141,11 @@ class EmailTransactionalMessageData
     /**
      * Sets options.
      *
-     * @param Options|null $options  E-mail configuration
+     * @param ElasticEmail\Model\Options|null $options
      *
      * @return $this
      */
-    public function setOptions($options = null)
+    public function setOptions(Options $options = null)
     {
         $this->options = $options;
 

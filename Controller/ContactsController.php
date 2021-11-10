@@ -98,7 +98,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 204;
             $responseHeaders = [];
@@ -179,7 +179,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -277,7 +277,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -377,7 +377,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -460,7 +460,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 204;
             $responseHeaders = [];
@@ -541,7 +541,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -608,10 +608,10 @@ class ContactsController extends Controller
 
         // Deserialize the input values that needs it
         try {
-            $fileFormat = $this->deserialize($fileFormat, 'ExportFileFormats', 'string');
+            $fileFormat = $this->deserialize($fileFormat, 'ElasticEmail\Model\ExportFileFormats', 'string');
             $rule = $this->deserialize($rule, 'string', 'string');
             $emails = $this->deserialize($emails, 'array<multi,string>', 'string');
-            $compressionFormat = $this->deserialize($compressionFormat, 'CompressionFormat', 'string');
+            $compressionFormat = $this->deserialize($compressionFormat, 'ElasticEmail\Model\CompressionFormat', 'string');
             $fileName = $this->deserialize($fileName, 'string', 'string');
         } catch (SerializerRuntimeException $exception) {
             return $this->createBadRequestResponse($exception->getMessage());
@@ -619,7 +619,7 @@ class ContactsController extends Controller
 
         // Validate the input values
         $asserts = [];
-        $asserts[] = new Assert\Type("ExportFileFormats");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\ExportFileFormats");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($fileFormat, $asserts);
         if ($response instanceof Response) {
@@ -641,7 +641,7 @@ class ContactsController extends Controller
             return $response;
         }
         $asserts = [];
-        $asserts[] = new Assert\Type("CompressionFormat");
+        $asserts[] = new Assert\Type("ElasticEmail\Model\CompressionFormat");
         $asserts[] = new Assert\Valid();
         $response = $this->validate($compressionFormat, $asserts);
         if ($response instanceof Response) {
@@ -660,7 +660,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -750,7 +750,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -838,7 +838,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 204;
             $responseHeaders = [];
@@ -942,7 +942,7 @@ class ContactsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];

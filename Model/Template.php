@@ -44,12 +44,10 @@ use JMS\Serializer\Annotation\SerializedName;
 class Template 
 {
         /**
-     * How the template should be edited
-     *
-     * @var TemplateType|null
+     * @var ElasticEmail\Model\TemplateType|null
      * @SerializedName("TemplateType")
-     * @Assert\Type("TemplateType")
-     * @Type("TemplateType")
+     * @Assert\Type("ElasticEmail\Model\TemplateType")
+     * @Type("ElasticEmail\Model\TemplateType")
      */
     protected $templateType;
 
@@ -96,12 +94,10 @@ class Template
     protected $body;
 
     /**
-     * Visibility of a template
-     *
-     * @var TemplateScope|null
+     * @var ElasticEmail\Model\TemplateScope|null
      * @SerializedName("TemplateScope")
-     * @Assert\Type("TemplateScope")
-     * @Type("TemplateScope")
+     * @Assert\Type("ElasticEmail\Model\TemplateScope")
+     * @Type("ElasticEmail\Model\TemplateScope")
      */
     protected $templateScope;
 
@@ -122,9 +118,9 @@ class Template
     /**
      * Gets templateType.
      *
-     * @return TemplateType|null
+     * @return ElasticEmail\Model\TemplateType|null
      */
-    public function getTemplateType()
+    public function getTemplateType(): ?TemplateType
     {
         return $this->templateType;
     }
@@ -132,11 +128,11 @@ class Template
     /**
      * Sets templateType.
      *
-     * @param TemplateType|null $templateType  How the template should be edited
+     * @param ElasticEmail\Model\TemplateType|null $templateType
      *
      * @return $this
      */
-    public function setTemplateType($templateType = null)
+    public function setTemplateType(TemplateType $templateType = null)
     {
         $this->templateType = $templateType;
 
@@ -242,9 +238,9 @@ class Template
     /**
      * Gets templateScope.
      *
-     * @return TemplateScope|null
+     * @return ElasticEmail\Model\TemplateScope|null
      */
-    public function getTemplateScope()
+    public function getTemplateScope(): ?TemplateScope
     {
         return $this->templateScope;
     }
@@ -252,11 +248,11 @@ class Template
     /**
      * Sets templateScope.
      *
-     * @param TemplateScope|null $templateScope  Visibility of a template
+     * @param ElasticEmail\Model\TemplateScope|null $templateScope
      *
      * @return $this
      */
-    public function setTemplateScope($templateScope = null)
+    public function setTemplateScope(TemplateScope $templateScope = null)
     {
         $this->templateScope = $templateScope;
 

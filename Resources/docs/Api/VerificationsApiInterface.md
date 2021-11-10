@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UploadedFile**](../Model/UploadedFile.md)
+**UploadedFile**
 
 ### Authorization
 

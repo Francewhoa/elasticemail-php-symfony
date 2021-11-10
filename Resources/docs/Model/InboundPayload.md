@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **filter** | **string** | Filter of the inbound data | 
 **name** | **string** | Name of this route | 
-**filterType** | [**InboundRouteFilterType**](InboundRouteFilterType.md) | Type of the filter | 
-**actionType** | [**InboundRouteActionType**](InboundRouteActionType.md) | Type of action to take | 
+**filterType** | [**ElasticEmail\Model\InboundRouteFilterType**](InboundRouteFilterType.md) |  | 
+**actionType** | [**ElasticEmail\Model\InboundRouteActionType**](InboundRouteActionType.md) |  | 
 **emailAddress** | **string** | Email to forward the inbound to | [optional] 
 **httpAddress** | **string** | Address to notify about the inbound | [optional] 
 

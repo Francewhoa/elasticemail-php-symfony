@@ -106,12 +106,10 @@ class CampaignTemplate
     protected $attachFiles;
 
     /**
-     * Utm marketing data to be attached to every link in this e-mail.
-     *
-     * @var Utm|null
+     * @var ElasticEmail\Model\Utm|null
      * @SerializedName("Utm")
-     * @Assert\Type("Utm")
-     * @Type("Utm")
+     * @Assert\Type("ElasticEmail\Model\Utm")
+     * @Type("ElasticEmail\Model\Utm")
      */
     protected $utm;
 
@@ -277,9 +275,9 @@ class CampaignTemplate
     /**
      * Gets utm.
      *
-     * @return Utm|null
+     * @return ElasticEmail\Model\Utm|null
      */
-    public function getUtm()
+    public function getUtm(): ?Utm
     {
         return $this->utm;
     }
@@ -287,11 +285,11 @@ class CampaignTemplate
     /**
      * Sets utm.
      *
-     * @param Utm|null $utm  Utm marketing data to be attached to every link in this e-mail.
+     * @param ElasticEmail\Model\Utm|null $utm
      *
      * @return $this
      */
-    public function setUtm($utm = null)
+    public function setUtm(Utm $utm = null)
     {
         $this->utm = $utm;
 

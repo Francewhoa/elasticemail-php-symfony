@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**eventType** | [**ContactHistEventType**](ContactHistEventType.md) | Type of event occured on this Contact. | [optional] 
-**eventDate** | [**\DateTime**](\DateTime.md) | Formatted date of event. | [optional] 
+**eventType** | [**ElasticEmail\Model\ContactHistEventType**](ContactHistEventType.md) |  | [optional] 
+**eventDate** | **\DateTime** | Formatted date of event. | [optional] 
 **channelName** | **string** | Name of channel this event occured on | [optional] 
 **templateName** | **string** | Name of template this event occured on | [optional] 
 **iPAddress** | **string** | IP Address of the event. | [optional] 

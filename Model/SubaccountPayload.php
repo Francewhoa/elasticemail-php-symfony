@@ -76,12 +76,10 @@ class SubaccountPayload
     protected $sendActivation;
 
     /**
-     * SubAccount settings
-     *
-     * @var SubaccountSettingsInfoPayload|null
+     * @var ElasticEmail\Model\SubaccountSettingsInfoPayload|null
      * @SerializedName("Settings")
-     * @Assert\Type("SubaccountSettingsInfoPayload")
-     * @Type("SubaccountSettingsInfoPayload")
+     * @Assert\Type("ElasticEmail\Model\SubaccountSettingsInfoPayload")
+     * @Type("ElasticEmail\Model\SubaccountSettingsInfoPayload")
      */
     protected $settings;
 
@@ -172,9 +170,9 @@ class SubaccountPayload
     /**
      * Gets settings.
      *
-     * @return SubaccountSettingsInfoPayload|null
+     * @return ElasticEmail\Model\SubaccountSettingsInfoPayload|null
      */
-    public function getSettings()
+    public function getSettings(): ?SubaccountSettingsInfoPayload
     {
         return $this->settings;
     }
@@ -182,11 +180,11 @@ class SubaccountPayload
     /**
      * Sets settings.
      *
-     * @param SubaccountSettingsInfoPayload|null $settings  SubAccount settings
+     * @param ElasticEmail\Model\SubaccountSettingsInfoPayload|null $settings
      *
      * @return $this
      */
-    public function setSettings($settings = null)
+    public function setSettings(SubaccountSettingsInfoPayload $settings = null)
     {
         $this->settings = $settings;
 

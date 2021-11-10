@@ -103,7 +103,7 @@ class EmailsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -195,7 +195,7 @@ class EmailsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -287,7 +287,7 @@ class EmailsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];
@@ -379,7 +379,7 @@ class EmailsController extends Controller
 
             // Set authentication method 'apikey'
             $handler->setapikey($securityapikey);
-            
+
             // Make the call to the business logic
             $responseCode = 200;
             $responseHeaders = [];

@@ -145,17 +145,17 @@ interface ContactsApiInterface
      *
      * Export Contacts
      *
-     * @param  \ExportFileFormats $fileFormat  Format of the exported file (optional)
+     * @param  \ElasticEmail\Model\ExportFileFormats $fileFormat  Format of the exported file (optional)
      * @param  \string $rule  Query used for filtering. (optional)
      * @param  \string[] $emails  Comma delimited list of contact emails (optional)
-     * @param  \CompressionFormat $compressionFormat  FileResponse compression format. None or Zip. (optional)
+     * @param  \ElasticEmail\Model\CompressionFormat $compressionFormat  FileResponse compression format. None or Zip. (optional)
      * @param  \string $fileName  Name of your file including extension. (optional)
      * @param  \int $responseCode     The HTTP response code to return
      * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return \ElasticEmail\Model\ExportLink
      */
-    public function contactsExportPost($fileFormat = null, $rule = null, array $emails = null, $compressionFormat = null, $fileName = null, &$responseCode, array &$responseHeaders);
+    public function contactsExportPost(ExportFileFormats $fileFormat = null, $rule = null, array $emails = null, CompressionFormat $compressionFormat = null, $fileName = null, &$responseCode, array &$responseHeaders);
 
     /**
      * Operation contactsGet

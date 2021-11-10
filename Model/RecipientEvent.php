@@ -94,12 +94,10 @@ class RecipientEvent
     protected $subject;
 
     /**
-     * Type of an Event
-     *
-     * @var EventType|null
+     * @var ElasticEmail\Model\EventType|null
      * @SerializedName("EventType")
-     * @Assert\Type("EventType")
-     * @Type("EventType")
+     * @Assert\Type("ElasticEmail\Model\EventType")
+     * @Type("ElasticEmail\Model\EventType")
      */
     protected $eventType;
 
@@ -124,12 +122,10 @@ class RecipientEvent
     protected $channelName;
 
     /**
-     * Message category
-     *
-     * @var MessageCategory|null
+     * @var ElasticEmail\Model\MessageCategory|null
      * @SerializedName("MessageCategory")
-     * @Assert\Type("MessageCategory")
-     * @Type("MessageCategory")
+     * @Assert\Type("ElasticEmail\Model\MessageCategory")
+     * @Type("ElasticEmail\Model\MessageCategory")
      */
     protected $messageCategory;
 
@@ -317,9 +313,9 @@ class RecipientEvent
     /**
      * Gets eventType.
      *
-     * @return EventType|null
+     * @return ElasticEmail\Model\EventType|null
      */
-    public function getEventType()
+    public function getEventType(): ?EventType
     {
         return $this->eventType;
     }
@@ -327,11 +323,11 @@ class RecipientEvent
     /**
      * Sets eventType.
      *
-     * @param EventType|null $eventType  Type of an Event
+     * @param ElasticEmail\Model\EventType|null $eventType
      *
      * @return $this
      */
-    public function setEventType($eventType = null)
+    public function setEventType(EventType $eventType = null)
     {
         $this->eventType = $eventType;
 
@@ -389,9 +385,9 @@ class RecipientEvent
     /**
      * Gets messageCategory.
      *
-     * @return MessageCategory|null
+     * @return ElasticEmail\Model\MessageCategory|null
      */
-    public function getMessageCategory()
+    public function getMessageCategory(): ?MessageCategory
     {
         return $this->messageCategory;
     }
@@ -399,11 +395,11 @@ class RecipientEvent
     /**
      * Sets messageCategory.
      *
-     * @param MessageCategory|null $messageCategory  Message category
+     * @param ElasticEmail\Model\MessageCategory|null $messageCategory
      *
      * @return $this
      */
-    public function setMessageCategory($messageCategory = null)
+    public function setMessageCategory(MessageCategory $messageCategory = null)
     {
         $this->messageCategory = $messageCategory;
 

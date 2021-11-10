@@ -44,7 +44,7 @@ use JMS\Serializer\Annotation\SerializedName;
 class EmailMessageData 
 {
         /**
-     * List of recipients (visible to others)
+     * List of recipients
      *
      * @var ElasticEmail\Model\EmailRecipient[]
      * @SerializedName("Recipients")
@@ -58,22 +58,18 @@ class EmailMessageData
     protected $recipients;
 
     /**
-     * Proper e-mail content
-     *
-     * @var EmailContent|null
+     * @var ElasticEmail\Model\EmailContent|null
      * @SerializedName("Content")
-     * @Assert\Type("EmailContent")
-     * @Type("EmailContent")
+     * @Assert\Type("ElasticEmail\Model\EmailContent")
+     * @Type("ElasticEmail\Model\EmailContent")
      */
     protected $content;
 
     /**
-     * E-mail configuration
-     *
-     * @var Options|null
+     * @var ElasticEmail\Model\Options|null
      * @SerializedName("Options")
-     * @Assert\Type("Options")
-     * @Type("Options")
+     * @Assert\Type("ElasticEmail\Model\Options")
+     * @Type("ElasticEmail\Model\Options")
      */
     protected $options;
 
@@ -101,7 +97,7 @@ class EmailMessageData
     /**
      * Sets recipients.
      *
-     * @param ElasticEmail\Model\EmailRecipient[] $recipients  List of recipients (visible to others)
+     * @param ElasticEmail\Model\EmailRecipient[] $recipients  List of recipients
      *
      * @return $this
      */
@@ -115,9 +111,9 @@ class EmailMessageData
     /**
      * Gets content.
      *
-     * @return EmailContent|null
+     * @return ElasticEmail\Model\EmailContent|null
      */
-    public function getContent()
+    public function getContent(): ?EmailContent
     {
         return $this->content;
     }
@@ -125,11 +121,11 @@ class EmailMessageData
     /**
      * Sets content.
      *
-     * @param EmailContent|null $content  Proper e-mail content
+     * @param ElasticEmail\Model\EmailContent|null $content
      *
      * @return $this
      */
-    public function setContent($content = null)
+    public function setContent(EmailContent $content = null)
     {
         $this->content = $content;
 
@@ -139,9 +135,9 @@ class EmailMessageData
     /**
      * Gets options.
      *
-     * @return Options|null
+     * @return ElasticEmail\Model\Options|null
      */
-    public function getOptions()
+    public function getOptions(): ?Options
     {
         return $this->options;
     }
@@ -149,11 +145,11 @@ class EmailMessageData
     /**
      * Sets options.
      *
-     * @param Options|null $options  E-mail configuration
+     * @param ElasticEmail\Model\Options|null $options
      *
      * @return $this
      */
-    public function setOptions($options = null)
+    public function setOptions(Options $options = null)
     {
         $this->options = $options;
 

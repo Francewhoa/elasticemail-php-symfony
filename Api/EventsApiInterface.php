@@ -65,7 +65,7 @@ interface EventsApiInterface
      * @param  \string $transactionid  ID number of transaction (required)
      * @param  \\DateTime $from  Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param  \\DateTime $to  Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param  \EventsOrderBy $orderBy   (optional)
+     * @param  \ElasticEmail\Model\EventsOrderBy $orderBy   (optional)
      * @param  \int $limit  Maximum number of returned items. (optional)
      * @param  \int $offset  How many items should be returned ahead. (optional)
      * @param  \int $responseCode     The HTTP response code to return
@@ -73,7 +73,7 @@ interface EventsApiInterface
      *
      * @return \ElasticEmail\Model\RecipientEvent[]
      */
-    public function eventsByTransactionidGet($transactionid, \DateTime $from = null, \DateTime $to = null, $orderBy = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
+    public function eventsByTransactionidGet($transactionid, \DateTime $from = null, \DateTime $to = null, EventsOrderBy $orderBy = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
     /**
      * Operation eventsChannelsByNameExportPost
@@ -84,15 +84,15 @@ interface EventsApiInterface
      * @param  \ElasticEmail\Model\EventType[] $eventTypes  Types of Events to return (optional)
      * @param  \\DateTime $from  Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param  \\DateTime $to  Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param  \ExportFileFormats $fileFormat  Format of the exported file (optional)
-     * @param  \CompressionFormat $compressionFormat  FileResponse compression format. None or Zip. (optional)
+     * @param  \ElasticEmail\Model\ExportFileFormats $fileFormat  Format of the exported file (optional)
+     * @param  \ElasticEmail\Model\CompressionFormat $compressionFormat  FileResponse compression format. None or Zip. (optional)
      * @param  \string $fileName  Name of your file including extension. (optional)
      * @param  \int $responseCode     The HTTP response code to return
      * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return \ElasticEmail\Model\ExportLink
      */
-    public function eventsChannelsByNameExportPost($name, array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, $fileFormat = null, $compressionFormat = null, $fileName = null, &$responseCode, array &$responseHeaders);
+    public function eventsChannelsByNameExportPost($name, array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, ExportFileFormats $fileFormat = null, CompressionFormat $compressionFormat = null, $fileName = null, &$responseCode, array &$responseHeaders);
 
     /**
      * Operation eventsChannelsByNameGet
@@ -103,7 +103,7 @@ interface EventsApiInterface
      * @param  \ElasticEmail\Model\EventType[] $eventTypes  Types of Events to return (optional)
      * @param  \\DateTime $from  Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param  \\DateTime $to  Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param  \EventsOrderBy $orderBy   (optional)
+     * @param  \ElasticEmail\Model\EventsOrderBy $orderBy   (optional)
      * @param  \int $limit  How many items to load. Maximum for this request is 1000 items (optional)
      * @param  \int $offset  How many items should be returned ahead. (optional)
      * @param  \int $responseCode     The HTTP response code to return
@@ -111,7 +111,7 @@ interface EventsApiInterface
      *
      * @return \ElasticEmail\Model\RecipientEvent[]
      */
-    public function eventsChannelsByNameGet($name, array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, $orderBy = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
+    public function eventsChannelsByNameGet($name, array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, EventsOrderBy $orderBy = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 
     /**
      * Operation eventsChannelsExportByIdStatusGet
@@ -147,15 +147,15 @@ interface EventsApiInterface
      * @param  \ElasticEmail\Model\EventType[] $eventTypes  Types of Events to return (optional)
      * @param  \\DateTime $from  Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param  \\DateTime $to  Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param  \ExportFileFormats $fileFormat  Format of the exported file (optional)
-     * @param  \CompressionFormat $compressionFormat  FileResponse compression format. None or Zip. (optional)
+     * @param  \ElasticEmail\Model\ExportFileFormats $fileFormat  Format of the exported file (optional)
+     * @param  \ElasticEmail\Model\CompressionFormat $compressionFormat  FileResponse compression format. None or Zip. (optional)
      * @param  \string $fileName  Name of your file including extension. (optional)
      * @param  \int $responseCode     The HTTP response code to return
      * @param  \array   $responseHeaders  Additional HTTP headers to return with the response ()
      *
      * @return \ElasticEmail\Model\ExportLink
      */
-    public function eventsExportPost(array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, $fileFormat = null, $compressionFormat = null, $fileName = null, &$responseCode, array &$responseHeaders);
+    public function eventsExportPost(array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, ExportFileFormats $fileFormat = null, CompressionFormat $compressionFormat = null, $fileName = null, &$responseCode, array &$responseHeaders);
 
     /**
      * Operation eventsGet
@@ -165,7 +165,7 @@ interface EventsApiInterface
      * @param  \ElasticEmail\Model\EventType[] $eventTypes  Types of Events to return (optional)
      * @param  \\DateTime $from  Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param  \\DateTime $to  Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param  \EventsOrderBy $orderBy   (optional)
+     * @param  \ElasticEmail\Model\EventsOrderBy $orderBy   (optional)
      * @param  \int $limit  How many items to load. Maximum for this request is 1000 items (optional)
      * @param  \int $offset  How many items should be returned ahead. (optional)
      * @param  \int $responseCode     The HTTP response code to return
@@ -173,5 +173,5 @@ interface EventsApiInterface
      *
      * @return \ElasticEmail\Model\RecipientEvent[]
      */
-    public function eventsGet(array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, $orderBy = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
+    public function eventsGet(array $eventTypes = null, \DateTime $from = null, \DateTime $to = null, EventsOrderBy $orderBy = null, $limit = null, $offset = null, &$responseCode, array &$responseHeaders);
 }

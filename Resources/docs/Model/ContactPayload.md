@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **string** | Proper email address. | 
-**status** | [**ContactStatus**](ContactStatus.md) | Status of the given resource | [optional] 
+**status** | [**ElasticEmail\Model\ContactStatus**](ContactStatus.md) |  | [optional] 
 **firstName** | **string** | First name. | [optional] 
 **lastName** | **string** | Last name. | [optional] 
 **customFields** | **string** | A key-value collection of custom contact fields which can be used in the system. Only already existing custom fields will be saved. | [optional] 
