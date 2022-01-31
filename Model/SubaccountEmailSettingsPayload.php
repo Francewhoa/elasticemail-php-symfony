@@ -104,6 +104,14 @@ class SubaccountEmailSettingsPayload
     protected $poolName;
 
     /**
+     * @var bool|null
+     * @SerializedName("ValidSenderDomainOnly")
+     * @Assert\Type("bool")
+     * @Type("bool")
+     */
+    protected $validSenderDomainOnly;
+
+    /**
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
@@ -115,6 +123,7 @@ class SubaccountEmailSettingsPayload
         $this->maxContacts = isset($data['maxContacts']) ? $data['maxContacts'] : null;
         $this->enablePrivateIPPurchase = isset($data['enablePrivateIPPurchase']) ? $data['enablePrivateIPPurchase'] : null;
         $this->poolName = isset($data['poolName']) ? $data['poolName'] : null;
+        $this->validSenderDomainOnly = isset($data['validSenderDomainOnly']) ? $data['validSenderDomainOnly'] : null;
     }
 
     /**
@@ -257,6 +266,30 @@ class SubaccountEmailSettingsPayload
     public function setPoolName($poolName = null)
     {
         $this->poolName = $poolName;
+
+        return $this;
+    }
+
+    /**
+     * Gets validSenderDomainOnly.
+     *
+     * @return bool|null
+     */
+    public function isValidSenderDomainOnly()
+    {
+        return $this->validSenderDomainOnly;
+    }
+
+    /**
+     * Sets validSenderDomainOnly.
+     *
+     * @param bool|null $validSenderDomainOnly
+     *
+     * @return $this
+     */
+    public function setValidSenderDomainOnly($validSenderDomainOnly = null)
+    {
+        $this->validSenderDomainOnly = $validSenderDomainOnly;
 
         return $this;
     }

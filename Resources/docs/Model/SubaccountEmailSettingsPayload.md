@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **maxContacts** | **int** | Maximum number of contacts the Account can have. 0 means that parent account&#39;s limit is used. | [optional] 
 **enablePrivateIPPurchase** | **bool** | Can the SubAccount purchase Private IP for themselves | [optional] 
 **poolName** | **string** | Name of your custom IP Pool to be used in the sending process | [optional] 
+**validSenderDomainOnly** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
